@@ -1,0 +1,19 @@
+/* src/styles/global.css */
+
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font imports for professional aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Mono:wght@100..700&display=swap');
+
+body {
+    /* Apply the custom fonts defined in tailwind.config.cjs */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Ensure data fields use the mono font */
+.font-mono {
+    font-family: 'Roboto Mono', monospace;
+}
