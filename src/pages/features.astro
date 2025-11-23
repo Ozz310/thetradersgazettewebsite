@@ -1,0 +1,22 @@
+---
+// src/pages/features.astro
+import Layout from '../layouts/Layout.astro';
+import FeaturesGrid from '../components/FeaturesGrid.astro';
+import PricingTeaser from '../components/PricingTeaser.astro';
+
+const pageTitle = "Features: Advanced Tools for Strategic Optimizers";
+const pageDescription = "Explore the full suite of proprietary analysis tools, real-time data feeds, and educational resources included with your membership.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+    <div class="container mx-auto px-4 py-16 space-y-20">
+        <header class="text-center pb-8 border-b border-gray-700/50">
+            <h1 class="text-5xl font-extrabold text-white mb-2">Our Core Platform Features</h1>
+            <p class="text-xl text-gray-400">Vision, Intelligence, and Precision—All in One Place.</p>
+        </header>
+
+        <FeaturesGrid />
+
+        <PricingTeaser />
+    </div>
+</Layout>
