@@ -1,0 +1,24 @@
+---
+// src/components/FeaturesGrid.astro
+
+// Define the key features of your app
+const features = [
+    { icon: '📊', title: 'Proprietary GAS Index', description: 'Our leading indicator for liquidity and risk appetite, exclusive to members.' },
+    { icon: '⭐', title: 'Daily Alpha Briefs', description: 'Concise, high-signal market actionables delivered before the opening bell.' },
+    { icon: '📉', title: 'Real-time Risk Modeling', description: 'Dynamic dashboard tools for calculating optimal position sizing and portfolio drawdown.' },
+    { icon: '📚', title: 'Elite E-Book Library', description: 'Access to the full library of advanced trading and macro strategy guides.' },
+    { icon: '🗓️', title: 'Global Trading Clock', description: 'Visualized session overlaps and market hours tailored for efficient global trading.' },
+    { icon: '📰', title: 'Curated News Feed', description: 'A filterable stream of finance news, stripped of noise and focusing on high-impact events.' },
+];
+---
+<section class="py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map(feature => (
+            <div class="bg-gray-800/50 p-6 rounded-lg shadow-xl border-l-4 border-tg-gold transition duration-300 hover:bg-gray-700/50">
+                <div class="text-4xl mb-4">{feature.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                <p class="text-gray-400">{feature.description}</p>
+            </div>
+        ))}
+    </div>
+</section>
