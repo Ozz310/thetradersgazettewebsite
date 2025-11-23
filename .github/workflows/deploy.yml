@@ -1,5 +1,5 @@
-
 # .github/workflows/deploy.yml
+# Check indentation carefully!
 
 name: Deploy Astro to GitHub Pages
 
@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm' # Cache node modules for faster builds
+          cache: 'npm'
           
       - name: Install dependencies
         run: npm install
@@ -28,10 +28,9 @@ jobs:
       - name: Build Astro site (npm run build creates the 'dist' folder)
         run: npm run build
         
-      # Deployment action: pushes the static 'dist' content to the gh-pages branch
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # The folder containing the final static website files
-          publish_branch: gh-pages # The special branch GitHub Pages serves from
+          publish_dir: ./dist
+          publish_branch: gh-pages
