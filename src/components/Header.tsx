@@ -1,93 +1,56 @@
 // src/components/Header.tsx
-// Using React and TypeScript
 
 import React from 'react';
 
-const NAV_LINKS = [
-    { name: 'Home', href: '/' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Features', href: '/features' },
-];
-
-interface NavItemProps {
-    name: string;
-    href: string;
-    isActive: boolean;
-}
-
-const NavItem: React.FC<NavItemProps> = ({ name, href, isActive }) => (
-    <a
-        href={href}
-        className={`
-            text-sm font-medium transition-colors duration-200 
-            ${isActive 
-                ? 'text-tg-gold border-b-2 border-tg-gold' 
-                : 'text-gray-300 hover:text-white hover:border-b-2 hover:border-gray-500'
-            }
-            py-1 px-3
-        `}
-    >
-        {name}
-    </a>
-);
-
 const Header: React.FC = () => {
-    // This is a placeholder for the current path in a static environment
-    const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/';
-    const isLinkActive = (href: string) => currentPath === href || (href === '/' && currentPath === '/index.html');
+  // External link for both login and registration in the app
+  const appAuthLink = "https://ozz310.github.io/tradersgazetteterminal/#auth";
 
-    return (
-        <header className="bg-tg-dark border-b border-tg-gray/50 shadow-lg sticky top-0 z-50">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-                
-                {/* Logo / Brand Title */}
-                <div className="flex items-center space-x-2">
-                    <span className="text-xl font-extrabold text-tg-gold tracking-wider">
-                        T<span className="text-gray-100">'G</span>
-                    </span>
-                    <h1 className="text-sm text-gray-400 font-light hidden sm:block">
-                        The Trader's Gazette
-                    </h1>
-                </div>
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md shadow-lg border-b border-gray-700/50">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        
+        {/* Logo/Brand Link */}
+        <a href="/" className="flex items-center space-x-2">
+          <img 
+            // Correctly references the file you uploaded to public/logo_tg.jpeg
+            src="/logo_tg.jpeg" 
+            alt="The Traders Gazette Logo"
+            className="h-10" // Adjust height if needed
+          />
+        </a>
 
-                {/* Central Navigation */}
-                <nav className="hidden md:flex space-x-8">
-                    {NAV_LINKS.map((link) => (
-                        <NavItem 
-                            key={link.href}
-                            name={link.name}
-                            href={link.href}
-                            isActive={isLinkActive(link.href)}
-                        />
-                    ))}
-                </nav>
+        {/* Navigation Links */}
+        <nav className="hidden md:flex space-x-8 text-gray-300 font-semibold">
+          <a href="/blog" className="hover:text-tg-gold transition duration-300">Blog</a>
+          <a href="/features" className="hover:text-tg-gold transition duration-300">Features</a>
+        </nav>
 
-                {/* Login / Register Buttons (High Signal CTAs) */}
-                <div className="flex items-center space-x-3">
-                    {/* Login - Muted/Secondary CTA */}
-                    <a
-                        href="/auth/login"
-                        className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200 py-1 px-3 hidden sm:block"
-                    >
-                        Login
-                    </a>
-                    
-                    {/* Register - Primary CTA (Using TG Gold) */}
-                    <a
-                        href="/auth/register"
-                        className="
-                            bg-tg-gold text-gray-900 font-bold text-sm 
-                            py-1.5 px-4 rounded-md shadow-md 
-                            hover:bg-yellow-500 transition-all duration-300
-                            whitespace-nowrap
-                        "
-                    >
-                        Register
-                    </a>
-                </div>
-            </div>
-        </header>
-    );
+        {/* Auth Buttons */}
+        <div className="space-x-4 flex items-center">
+          {/* Login button connects to the external app link */}
+          <a 
+            href={appAuthLink}
+            className="text-gray-300 hover:text-tg-gold font-semibold transition duration-300"
+            target="_blank" // Opens in a new tab
+            rel="noopener noreferrer"
+          >
+            Login
+          </a>
+          
+          {/* Register button also connects to the external app link */}
+          <a 
+            href={appAuthLink}
+            className="bg-tg-gold text-gray-900 font-bold py-2 px-4 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300"
+            target="_blank" // Opens in a new tab
+            rel="noopener noreferrer"
+          >
+            Register
+          </a>
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default Header;
