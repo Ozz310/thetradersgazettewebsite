@@ -1,0 +1,31 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import HeroMacroThesis from '../components/HeroMacroThesis.astro';
+import GASReportTeaser from '../components/GASReportTeaser.astro';
+import ValuePillars from '../components/ValuePillars.astro';
+
+// Homepage metadata
+const pageTitle = "The Daily Market Edge: Macro Analysis & Exclusive Reports";
+const pageDescription = "Access high-signal macro strategy and data-driven analysis for global markets. Exclusive reports for discerning investors.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<div class="container mx-auto px-4 py-16 space-y-24">
+		
+		<HeroMacroThesis />
+
+		<GASReportTeaser />
+
+		<ValuePillars />
+
+		<section class="text-center py-16 border-t border-gray-700/50">
+			<h2 class="text-3xl font-bold text-gray-100 mb-4">Ready to Get the Edge?</h2>
+			<p class="text-gray-400 mb-8 max-w-xl mx-auto">Join the 1% of traders who operate with institutional clarity and efficiency.</p>
+			<a href="/auth/register" class="bg-tg-gold text-gray-900 font-extrabold text-lg py-3 px-8 rounded-lg shadow-xl hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105">
+				Start Your Exclusive Access
+			</a>
+		</section>
+
+	</div>
+</Layout>
