@@ -4,10 +4,12 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  // IMPORTANT: Set the base path for GitHub Pages hosting
-  // This must match your repository name exactly (including casing)
-  base: '/thetradersgazettewebsite/',
+  // 🚀 FIX: Set base to root '/' because you are using a Custom Domain.
+  base: '/',
   
+  // Optional but good for SEO:
+  site: 'https://www.thetradersgazette.com',
+
   integrations: [tailwind(), react()],
-  output: 'static', // For static GitHub Pages hosting
+  output: 'static', 
 });
