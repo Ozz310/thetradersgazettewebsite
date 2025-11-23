@@ -1,4 +1,4 @@
-// src/components/Header.tsx
+// src/components/Header.tsx - FINAL VERSION
 
 import React from 'react';
 
@@ -13,15 +13,16 @@ const Header: React.FC = () => {
         {/* Logo/Brand Link */}
         <a href="/" className="flex items-center space-x-2">
           <img 
-            // Correctly references the file you uploaded to public/logo_tg.jpeg
             src="/logo_tg.jpeg" 
             alt="The Traders Gazette Logo"
-            className="h-10" // Adjust height if needed
+            className="h-10" 
           />
         </a>
 
-        {/* Navigation Links */}
+        {/* Navigation Links: HOME, Blog, Features */}
         <nav className="hidden md:flex space-x-8 text-gray-300 font-semibold">
+          {/* FIX: Explicit Home link added back to the navigation list */}
+          <a href="/" className="hover:text-tg-gold transition duration-300">Home</a> 
           <a href="/blog" className="hover:text-tg-gold transition duration-300">Blog</a>
           <a href="/features" className="hover:text-tg-gold transition duration-300">Features</a>
         </nav>
@@ -32,7 +33,7 @@ const Header: React.FC = () => {
           <a 
             href={appAuthLink}
             className="text-gray-300 hover:text-tg-gold font-semibold transition duration-300"
-            target="_blank" // Opens in a new tab
+            target="_blank" 
             rel="noopener noreferrer"
           >
             Login
@@ -42,7 +43,7 @@ const Header: React.FC = () => {
           <a 
             href={appAuthLink}
             className="bg-tg-gold text-gray-900 font-bold py-2 px-4 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300"
-            target="_blank" // Opens in a new tab
+            target="_blank" 
             rel="noopener noreferrer"
           >
             Register
