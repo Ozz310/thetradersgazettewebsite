@@ -1,11 +1,8 @@
-# .github/workflows/deploy.yml
-# Check indentation carefully!
-
 name: Deploy Astro to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Action runs every time you push to the 'main' branch
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
@@ -25,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm install
         
-      - name: Build Astro site (npm run build creates the 'dist' folder)
+      - name: Build Astro site
         run: npm run build
         
       - name: Deploy to GitHub Pages
