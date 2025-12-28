@@ -1,19 +1,74 @@
 /* src/styles/global.css */
-
-/* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom font imports for professional aesthetic */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Mono:wght@100..700&display=swap');
-
-body {
-    /* Apply the custom fonts defined in tailwind.config.cjs */
-    font-family: 'Inter', sans-serif;
+:root {
+  /* 🎨 THEME: OBSIDIAN VAULT (Strict No-Blue Policy) */
+  --bg-color: #050505;      /* True Deep Black */
+  --card-bg: #111111;       /* Neutral Dark Grey for cards */
+  --card-border: #222222;   /* Subtle Border */
+  
+  /* TEXT */
+  --text-color: #f1f1f1;
+  --text-muted: #8B949E;
+  
+  /* ✨ GOLD ACCENTS */
+  --gold-primary: #DDAA33;
+  --gold-gradient: linear-gradient(145deg, #F0D788, #DDAA33);
+  --gold-glow: rgba(221, 170, 51, 0.15);
 }
 
-/* Ensure data fields use the mono font */
-.font-mono {
-    font-family: 'Roboto Mono', monospace;
+@layer base {
+  html {
+    background-color: var(--bg-color);
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    /* Enforce Obsidian Black to override any default browser blues */
+    @apply bg-[#050505] text-[#f1f1f1] font-sans antialiased;
+    background-color: var(--bg-color) !important;
+  }
+
+  /* Typography Authority */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* 🌟 THE "GOLD STANDARD" BUTTON */
+  .tg-button-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-bold uppercase tracking-wider text-[#0D0D0D] transition-all duration-300 rounded-lg;
+    background: var(--gold-gradient);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+  
+  .tg-button-primary:hover {
+    @apply transform -translate-y-1 brightness-110;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8), 0 0 25px var(--gold-primary);
+  }
+
+  /* SECONDARY BUTTON (Outline) */
+  .tg-button-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-bold uppercase tracking-wider text-[#DDAA33] transition-all duration-300 border border-[#222] rounded-lg bg-transparent;
+  }
+  
+  .tg-button-secondary:hover {
+    @apply bg-[#DDAA33]/10 border-[#DDAA33];
+    box-shadow: 0 0 15px rgba(221, 170, 51, 0.1);
+  }
+
+  /* CARD STYLING (Replaces bg-gray-800) */
+  .tg-card {
+    @apply bg-[#111111] border border-[#222] rounded-xl p-6 transition-all duration-300;
+  }
+  
+  .tg-card:hover {
+    @apply border-[#DDAA33]/30 transform -translate-y-1;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
 }
