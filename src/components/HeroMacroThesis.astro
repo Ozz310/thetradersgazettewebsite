@@ -1,14 +1,33 @@
 ---
 // src/components/HeroMacroThesis.astro
 ---
-<section class="text-center py-20">
-    <h1 class="text-5xl font-extrabold text-white mb-4 leading-tight">
-        The Macro Edge: <span class="text-tg-gold">Institutional Clarity.</span>
+<section class="relative py-20 lg:py-32 overflow-hidden">
+  <div class="relative z-10 text-center max-w-4xl mx-auto">
+    <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-6">
+      The Macro Edge: <span class="text-[#DDAA33]">Institutional Clarity.</span>
     </h1>
-    <p class="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-        Unlocking high-signal analysis for the world's most discerning investors and strategic optimizers.
+    <p class="text-xl md:text-2xl text-gray-400 mb-10 leading-relaxed font-light">
+      Unlocking high-signal analysis for the world's most discerning investors and strategic optimizers.
     </p>
-    <a href="/auth/register" class="bg-tg-gold text-gray-900 font-bold py-3 px-8 rounded-lg shadow-2xl transition duration-300 hover:bg-yellow-500">
+    
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+      <a 
+        href="https://app.thetradersgazette.com/#auth" 
+        style="background: linear-gradient(145deg, #F0D788, #DDAA33);"
+        class="w-full sm:w-auto text-gray-900 font-bold py-4 px-10 rounded-full text-lg shadow-xl hover:brightness-110 transition-all duration-300 transform hover:scale-105"
+      >
         Access Exclusive Reports
-    </a>
+      </a>
+      <a 
+        href="#intel" 
+        class="w-full sm:w-auto border border-gray-700 text-white font-semibold py-4 px-10 rounded-full text-lg hover:bg-white/5 transition duration-300"
+      >
+        View Market Brief
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-6xl opacity-20 pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#DDAA33]/20 via-transparent to-[#DDAA33]/20 blur-3xl"></div>
+  </div>
 </section>
