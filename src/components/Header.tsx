@@ -1,17 +1,14 @@
-// src/components/Header.tsx - FINAL RESPONSIVE VERSION
 import React, { useState } from 'react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
-  // 🔗 UPDATED: Professional Subdomain Link (Same-tab redirect)
   const appAuthLink = "https://app.thetradersgazette.com/#auth";
 
   const navItems = (
     <>
-      <a href="/" className="hover:text-tg-gold transition duration-300 block py-2 px-4 md:p-0">Home</a>
-      <a href="/blog" className="hover:text-tg-gold transition duration-300 block py-2 px-4 md:p-0">Blog</a>
-      <a href="/features" className="hover:text-tg-gold transition duration-300 block py-2 px-4 md:p-0">Features</a>
+      <a href="/" className="hover:text-[#DDAA33] transition duration-300 block py-2 px-4 md:p-0">Home</a>
+      <a href="/blog" className="hover:text-[#DDAA33] transition duration-300 block py-2 px-4 md:p-0">Blog</a>
+      <a href="/features" className="hover:text-[#DDAA33] transition duration-300 block py-2 px-4 md:p-0">Features</a>
     </>
   );
 
@@ -27,35 +24,43 @@ const Header: React.FC = () => {
         </nav>
 
         <div className="space-x-4 flex items-center">
-          <button 
-            className="text-white md:hidden p-2 focus:outline-none z-50"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle Navigation Menu"
-          >
+          <button className="text-white md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
               )}
             </svg>
           </button>
           
-          <a href={appAuthLink} className="hidden md:inline-block text-gray-300 hover:text-tg-gold font-semibold transition duration-300">
+          <a href={appAuthLink} className="hidden md:inline-block text-gray-300 hover:text-[#DDAA33] font-semibold transition duration-300">
             Login
           </a>
           
-          <a href={appAuthLink} className="hidden md:inline-block bg-gradient-gold text-gray-900 font-bold py-2 px-4 rounded-full shadow-lg hover:brightness-110 transition duration-300">
+          {/* REGISTER BUTTON WITH TERMINAL GOLD GRADIENT */}
+          <a 
+            href={appAuthLink} 
+            style={{ background: 'linear-gradient(145deg, #F0D788, #DDAA33)' }}
+            className="hidden md:inline-block text-gray-900 font-bold py-2 px-4 rounded-full shadow-lg hover:brightness-110 transition duration-300 transform hover:scale-105"
+          >
             Register
           </a>
         </div>
       </div>
       
-      <nav className={`md:hidden absolute top-full left-0 right-0 bg-black/95 border-t border-gray-700/50 transform transition-all duration-330 ease-in-out ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'} flex flex-col items-start p-4 text-gray-300 font-semibold`}>
+      {/* Mobile Menu */}
+      <nav className={`md:hidden absolute top-full left-0 right-0 bg-black/95 transform transition-all duration-300 ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'} p-4 text-gray-300 font-semibold`}>
         {navItems}
         <div className="w-full mt-4 pt-4 border-t border-gray-700/50 flex flex-col space-y-3">
-          <a href={appAuthLink} className="text-gray-300 hover:text-tg-gold font-semibold py-2 w-full text-left">Login</a>
-          <a href={appAuthLink} className="bg-gradient-gold text-gray-900 font-bold py-2 px-4 rounded-lg shadow-lg hover:brightness-110 transition duration-300 w-full text-center">Register</a>
+          <a href={appAuthLink} className="text-gray-300 hover:text-[#DDAA33] py-2">Login</a>
+          <a 
+            href={appAuthLink} 
+            style={{ background: 'linear-gradient(145deg, #F0D788, #DDAA33)' }}
+            className="text-gray-900 font-bold py-2 px-4 rounded-lg text-center"
+          >
+            Register
+          </a>
         </div>
       </nav>
     </header>
