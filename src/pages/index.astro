@@ -1,11 +1,9 @@
 ---
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.tsx';
 import HeroMacroThesis from '../components/HeroMacroThesis.astro';
 import GASReportTeaser from '../components/GASReportTeaser.astro';
 import ValuePillars from '../components/ValuePillars.astro';
-import Footer from '../components/Footer.astro';
 
 // Professional Metadata
 const pageTitle = "The Traders Gazette | Institutional Market Intelligence";
@@ -13,9 +11,8 @@ const pageDescription = "Access high-signal macro strategy and data-driven analy
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-	<Header client:load />
 	
-	<main class="bg-[#0F172A] text-white">
+	<div class="bg-[#0F172A] text-white">
 		<div class="container mx-auto px-4 py-16 space-y-32">
 			
 			<HeroMacroThesis />
@@ -47,7 +44,6 @@ const pageDescription = "Access high-signal macro strategy and data-driven analy
 			</section>
 
 		</div>
-	</main>
+	</div>
 
-	<Footer />
 </Layout>
