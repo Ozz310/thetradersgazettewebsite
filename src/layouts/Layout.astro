@@ -1,51 +1,38 @@
 ---
 // src/layouts/Layout.astro
-import Header from '../components/Header.tsx';
-import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 interface Props {
 	title: string;
-	description: string;
 }
 
-const { title, description } = Astro.props;
+const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title} | The Trader's Gazette</title>
-    <meta name="description" content={description} />
-</head>
-<body class="min-h-screen bg-gray-900 text-gray-200 font-sans antialiased">
-    
-    <Header client:load />
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Institutional-grade analytics for the 1%." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+	</head>
+	
+	<body class="bg-[#050505] text-[#f1f1f1] antialiased min-h-screen flex flex-col">
+		
+		<slot name="header" />
+		
+		<main class="flex-grow">
+			<slot />
+		</main>
 
-    <main class="flex-grow">
-        <slot />
-    </main>
-
-    <Footer />
-</body>
+		<slot name="footer" />
+		
+	</body>
 </html>
-
-<style is:global>
-    /* Custom Scrollbar for Pro UI UX */
-    .dark::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    .dark::-webkit-scrollbar-thumb {
-        background: #374151;
-        border-radius: 4px;
-    }
-
-    .dark::-webkit-scrollbar-track {
-        background: #111827;
-    }
-</style>
