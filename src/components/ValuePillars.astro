@@ -1,26 +1,52 @@
 ---
 // src/components/ValuePillars.astro
 ---
-<section class="py-12">
-    <h2 class="text-3xl font-bold text-center text-white mb-10">Our Core Value Proposition</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<section class="py-24 bg-[#0B1120]">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(250px,auto)]">
         
-        <div class="bg-gray-800/50 p-6 rounded-lg shadow-xl border-t-4 border-tg-gold">
-            <div class="text-3xl text-tg-gold mb-4">📈</div>
-            <h3 class="text-xl font-semibold text-white mb-2">High-Signal Data Feeds</h3>
-            <p class="text-gray-400">Cut through the noise with proprietary indicators, clean charts, and strictly non-distracting data presentation.</p>
+        <div class="md:col-span-2 bg-[#1E293B]/40 border border-gray-700/30 rounded-2xl p-8 hover:border-[#DDAA33]/50 transition duration-500 group relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition duration-500">
+                <svg class="w-32 h-32 text-[#DDAA33]" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2 flex items-center gap-3">
+                <span class="w-2 h-8 bg-[#DDAA33] rounded-full"></span>
+                Analysis Hub
+            </h3>
+            <p class="text-gray-400 text-lg mb-6 max-w-md">
+                Institutional-grade charting and proprietary liquidity indicators. Visualize the invisible hand of the market.
+            </p>
+            <div class="flex gap-2">
+                <span class="px-3 py-1 rounded-md bg-[#DDAA33]/10 text-[#DDAA33] text-xs font-mono">FLOW</span>
+                <span class="px-3 py-1 rounded-md bg-[#DDAA33]/10 text-[#DDAA33] text-xs font-mono">VOLATILITY</span>
+            </div>
         </div>
 
-        <div class="bg-gray-800/50 p-6 rounded-lg shadow-xl border-t-4 border-tg-gold">
-            <div class="text-3xl text-tg-gold mb-4">🧠</div>
-            <h3 class="text-xl font-semibold text-white mb-2">Strategic Macro Thesis</h3>
-            <p class="text-gray-400">Receive actionable, forward-looking strategic theses that frame your investment decisions for the next 12-18 months.</p>
+        <div class="bg-[#1E293B]/40 border border-gray-700/30 rounded-2xl p-8 hover:border-[#DDAA33]/50 transition duration-500">
+            <h3 class="text-xl font-bold text-white mb-3">⚡ News Aggregator</h3>
+            <p class="text-gray-400 text-sm mb-4">
+                500+ global sources distilled into a single, noise-free feed.
+            </p>
+            <div class="space-y-2">
+                <div class="h-2 w-full bg-gray-700/50 rounded animate-pulse"></div>
+                <div class="h-2 w-3/4 bg-gray-700/50 rounded animate-pulse delay-75"></div>
+            </div>
         </div>
 
-        <div class="bg-gray-800/50 p-6 rounded-lg shadow-xl border-t-4 border-tg-gold">
-            <div class="text-3xl text-tg-gold mb-4">⏱️</div>
-            <h3 class="text-xl font-semibold text-white mb-2">Optimized for Efficiency</h3>
-            <p class="text-gray-400">Our reports are concise, structured, and designed for professionals who value time over verbose commentary.</p>
+        <div class="bg-[#1E293B]/40 border border-gray-700/30 rounded-2xl p-8 hover:border-[#DDAA33]/50 transition duration-500">
+            <h3 class="text-xl font-bold text-white mb-3">📓 Trading Journal</h3>
+            <p class="text-gray-400 text-sm">
+                Log, tag, and analyze every trade. The only path to consistency is tracked performance.
+            </p>
         </div>
+
+        <div class="md:col-span-2 bg-gradient-to-br from-[#1E293B]/60 to-[#DDAA33]/10 border border-gray-700/30 rounded-2xl p-8 hover:border-[#DDAA33]/50 transition duration-500">
+             <h3 class="text-2xl font-bold text-white mb-3">Daily Macro Thesis</h3>
+             <p class="text-gray-400 text-lg">
+                 Start every session with a clear directional bias. Our "Daily Alpha" report is read by elite traders before the opening bell.
+             </p>
+        </div>
+
     </div>
+  </div>
 </section>
