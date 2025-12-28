@@ -3,7 +3,8 @@
 import Layout from '../layouts/Layout.astro';
 import HeroMacroThesis from '../components/HeroMacroThesis.astro';
 import GASReportTeaser from '../components/GASReportTeaser.astro';
-import ValuePillars from '../components/ValuePillars.astro';
+// Switched to FeaturesGrid since you provided that code for the ecosystem
+import FeaturesGrid from '../components/FeaturesGrid.astro'; 
 
 // Professional Metadata
 const pageTitle = "The Traders Gazette | Institutional Market Intelligence";
@@ -12,38 +13,50 @@ const pageDescription = "Access high-signal macro strategy and data-driven analy
 
 <Layout title={pageTitle} description={pageDescription}>
 	
-	<div class="bg-[#0F172A] text-white">
-		<div class="container mx-auto px-4 py-16 space-y-32">
-			
-			<HeroMacroThesis />
+	<div class="overflow-hidden">
+		
+		<HeroMacroThesis />
 
-			<section id="intel" class="scroll-mt-24">
-				<GASReportTeaser />
-			</section>
+		<section id="intel" class="scroll-mt-24 relative z-10">
+			<GASReportTeaser />
+		</section>
 
-			<section id="features" class="scroll-mt-24">
+		<section id="features" class="scroll-mt-24 bg-[#050505] py-24 relative">
+			<div class="container mx-auto px-4">
 				<div class="text-center mb-16">
-					<h2 class="text-3xl md:text-5xl font-bold mb-4">The Terminal Ecosystem</h2>
-					<p class="text-gray-400 max-w-2xl mx-auto text-lg">Institutional tools redesigned for the modern strategic investor.</p>
+					<h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">The Terminal Ecosystem</h2>
+					<p class="text-[#8B949E] max-w-2xl mx-auto text-lg font-light">
+						Institutional tools redesigned for the modern strategic investor.
+					</p>
 				</div>
-				<ValuePillars />
-			</section>
+				<FeaturesGrid />
+			</div>
+		</section>
 
-			<section class="text-center py-24 border-t border-gray-800/50">
-				<h2 class="text-3xl md:text-5xl font-bold mb-6">Ready for Institutional Insight?</h2>
-				<p class="text-gray-400 mb-10 max-w-2xl mx-auto italic text-xl">
+		<section class="text-center py-24 relative overflow-hidden bg-[#050505]">
+			
+			<div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#111111] to-[#050505]"></div>
+			<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#DDAA33]/5 blur-[100px] rounded-full pointer-events-none"></div>
+			
+			<div class="relative z-10 container mx-auto px-4">
+				<h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
+					Ready for <span class="text-[#DDAA33] italic">Institutional Insight?</span>
+				</h2>
+				
+				<p class="text-[#8B949E] mb-10 max-w-2xl mx-auto text-xl font-light">
 					Stop chasing news headlines. Start trading with the clarity and precision reserved for the elite 1%.
 				</p>
+				
 				<a 
 					href="https://app.thetradersgazette.com/#auth" 
 					style="background: linear-gradient(145deg, #F0D788, #DDAA33);"
-					class="inline-block text-gray-900 font-extrabold text-xl py-5 px-12 rounded-xl shadow-2xl hover:brightness-110 transition-all duration-300 transform hover:scale-105"
+					class="inline-block text-[#0D0D0D] font-bold text-lg py-4 px-10 rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_20px_rgba(221,170,51,0.4)] hover:brightness-110 transition-all duration-300 transform hover:-translate-y-1"
 				>
 					Access The Terminal
 				</a>
-			</section>
+			</div>
+		</section>
 
-		</div>
 	</div>
 
 </Layout>
