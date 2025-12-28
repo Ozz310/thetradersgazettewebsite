@@ -2,6 +2,13 @@
 // src/layouts/Layout.astro
 import '../styles/global.css';
 
+// 1. Import the Header and Footer components directly here
+// (Check if your file is .astro or .tsx, I have included both imports just in case, uncomment the one you use)
+import Header from '../components/Header'; // If using React (.tsx)
+// import Header from '../components/Header.astro'; // If using Astro
+
+import Footer from '../components/Footer.astro';
+
 interface Props {
 	title: string;
 }
@@ -24,15 +31,14 @@ const { title } = Astro.props;
 		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 	</head>
 	
-	<body class="bg-[#050505] text-[#f1f1f1] antialiased min-h-screen flex flex-col">
+	<body class="bg-[#050505] text-[#f1f1f1] antialiased min-h-screen flex flex-col selection:bg-[#DDAA33] selection:text-black">
 		
-		<slot name="header" />
+		<Header client:load /> 
 		
-		<main class="flex-grow">
-			<slot />
+		<main class="flex-grow pt-20"> <slot />
 		</main>
 
-		<slot name="footer" />
+		<Footer />
 		
 	</body>
 </html>
