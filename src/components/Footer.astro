@@ -1,13 +1,17 @@
 ---
 // src/components/Footer.astro
 ---
-<footer class="bg-gray-800/50 border-t border-tg-gray mt-12 py-8">
-    <div class="container mx-auto px-4 text-center text-xs text-gray-400">
-        <p>&copy; {new Date().getFullYear()} The Trader's Gazette. All Rights Reserved. </p>
-        <p class="mt-1">
-            <a href="/about" class="hover:text-tg-gold">About Us</a> | 
-            <a href="/terms" class="hover:text-tg-gold">Terms of Use</a> | 
-            <a href="/privacy" class="hover:text-tg-gold">Privacy Policy</a>
-        </p>
+<footer class="bg-[#050505] border-t border-[#222] mt-0 py-12">
+  <div class="container mx-auto px-4 text-center">
+    <p class="text-xs text-[#8B949E] mb-4">
+      &copy; {new Date().getFullYear()} The Trader's Gazette. All Rights Reserved.
+    </p>
+    <div class="flex justify-center space-x-6 text-sm text-[#8B949E]">
+      <a href="/about" class="hover:text-[#DDAA33] transition-colors">About Us</a>
+      <span class="text-[#222]">|</span>
+      <a href="/terms" class="hover:text-[#DDAA33] transition-colors">Terms of Use</a>
+      <span class="text-[#222]">|</span>
+      <a href="/privacy" class="hover:text-[#DDAA33] transition-colors">Privacy Policy</a>
     </div>
+  </div>
 </footer>
