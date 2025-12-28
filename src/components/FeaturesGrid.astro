@@ -1,7 +1,7 @@
 ---
 // src/components/FeaturesGrid.astro
 
-// Define the key features of your app (Preserved from old code)
+// Define the key features of your app
 const features = [
   { icon: '📊', title: 'Proprietary GAS Index', description: 'Our leading indicator for liquidity and risk appetite, exclusive to members.' },
   { icon: '⭐', title: 'Daily Alpha Briefs', description: 'Concise, high-signal market actionables delivered before the opening bell.' },
@@ -12,16 +12,22 @@ const features = [
 ];
 ---
 
-<section class="py-20 bg-[#050505]">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {features.map(feature => (
-        <div class="tg-card group border-l-4 border-l-[#DDAA33]">
-          <div class="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
-          <h3 class="text-xl font-serif font-bold text-white mb-3 group-hover:text-[#DDAA33] transition-colors">{feature.title}</h3>
-          <p class="text-[#8B949E] leading-relaxed">{feature.description}</p>
-        </div>
-      ))}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {features.map(feature => (
+    /* 🛠️ FIX: Using Neutral Black Card (#111111) via global class or utility */
+    <div class="group bg-[#111111] border border-[#222] rounded-xl p-8 hover:border-[#DDAA33]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black">
+      
+      <div class="text-4xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+        {feature.icon}
+      </div>
+      
+      <h3 class="text-xl font-serif font-bold text-white mb-3 group-hover:text-[#DDAA33] transition-colors">
+        {feature.title}
+      </h3>
+      
+      <p class="text-[#8B949E] leading-relaxed">
+        {feature.description}
+      </p>
     </div>
-  </div>
-</section>
+  ))}
+</div>
