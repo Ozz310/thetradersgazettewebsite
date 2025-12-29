@@ -1,41 +1,73 @@
 ---
 // src/components/GASReportTeaser.astro
+// Description: Journal Insights - Performance Visualization Section
 ---
-<section class="relative group py-16 bg-[#050505]">
-  <div class="absolute inset-0 bg-gradient-to-r from-[#DDAA33]/10 to-transparent blur-3xl opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+<section class="relative group py-24 bg-[#050505] overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-r from-[#DDAA33]/5 to-transparent blur-3xl opacity-30 group-hover:opacity-50 transition duration-1000"></div>
   
-  <div class="container mx-auto px-4">
-    <div class="relative bg-[#111111] border border-[#222] rounded-2xl p-8 md:p-12 shadow-2xl">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+  <div class="container mx-auto px-6">
+    <div class="relative bg-[#111111] border border-[#222] rounded-2xl p-8 md:p-16 shadow-2xl">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
         
-        <div>
-          <h3 class="text-3xl font-serif font-bold text-white mb-4">Daily Market Brief</h3>
-          <p class="text-[#8B949E] text-lg leading-relaxed mb-8">
-            Our high-signal intelligence report delivered daily. Access institutional-grade analysis covering Macro, FX, and Equities before the opening bell.
+        <div class="animate-fade-in-up">
+          <h3 class="text-4xl font-serif font-bold text-white mb-6">
+            Journal <span class="text-[#DDAA33] italic">Insights</span>
+          </h3>
+          <p class="text-[#8B949E] text-lg leading-relaxed mb-10">
+            The most advanced trading journal for serious operators. Automatically analyze performance with institutional-grade visualizations that reveal your true edge.
           </p>
           
-          <ul class="space-y-4 mb-8">
+          <ul class="space-y-5 mb-10">
             <li class="flex items-center text-gray-300">
-              <svg class="w-5 h-5 mr-3 text-[#DDAA33]" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-              Global Macro Sentiment
+              <svg class="w-6 h-6 mr-3 text-[#DDAA33]" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+              Multi-Asset Performance Mapping
             </li>
             <li class="flex items-center text-gray-300">
-               <svg class="w-5 h-5 mr-3 text-[#DDAA33]" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-              Institutional Order Flow
+              <svg class="w-6 h-6 mr-3 text-[#DDAA33]" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+              Time-Based P&L Distribution
+            </li>
+            <li class="flex items-center text-gray-300">
+              <svg class="w-6 h-6 mr-3 text-[#DDAA33]" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+              Automated Trade Intelligence
             </li>
           </ul>
 
-          <a href="/blog" class="tg-button-primary">
-            Read Latest Report
+          <a 
+            href="https://app.thetradersgazette.com/#auth" 
+            class="inline-block px-10 py-4 rounded-full bg-[linear-gradient(145deg,#F0D788,#DDAA33)] text-black font-bold text-lg transition-all duration-300 shadow-[0_10px_20px_rgba(221,170,51,0.1)] hover:shadow-[0_15px_30px_rgba(221,170,51,0.3)] hover:-translate-y-1"
+          >
+            Analyze Your Edge
           </a>
         </div>
 
-        <div class="hidden md:block h-64 bg-gradient-to-br from-black to-[#1a1a1a] rounded-xl border border-[#333] flex items-center justify-center relative overflow-hidden">
-             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-             <span class="text-[#DDAA33] font-serif text-2xl italic">"Alpha Generated"</span>
+        <div class="relative w-full group perspective-1200">
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[80%] bg-[#DDAA33]/15 blur-[100px] rounded-full animate-pulse-slow"></div>
+
+          <div class="relative transform transition-all duration-1000 cubic-bezier group-hover:rotate-y-[-6deg] rotate-y-[-12deg] rotate-x-2">
+            <div class="rounded-xl border border-white/10 bg-[#0a0a0a] p-1.5 shadow-2xl shadow-black/90 ring-1 ring-white/5 overflow-hidden">
+              <img 
+                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/Trade%20journal.PNG" 
+                alt="Trade Journal Analytics Visualization" 
+                class="w-full h-auto rounded-lg border border-white/5"
+              />
+            </div>
+            <div class="absolute inset-0 rounded-xl bg-gradient-to-tr from-white/5 via-transparent to-transparent pointer-events-none"></div>
+          </div>
         </div>
 
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .perspective-1200 { perspective: 1200px; }
+  .cubic-bezier { transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); }
+  
+  /* Shared Animation Logic */
+  @keyframes pulseGlow {
+    0% { opacity: 0.2; transform: translate(-50%, -50%) scale(0.95); }
+    100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.05); }
+  }
+  .animate-pulse-slow { animation: pulseGlow 6s infinite alternate ease-in-out; }
+</style>
