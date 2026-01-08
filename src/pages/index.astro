@@ -1,62 +1,47 @@
 ---
-// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
-import HeroMacroThesis from '../components/HeroMacroThesis.astro';
-import GASReportTeaser from '../components/GASReportTeaser.astro';
-// Switched to FeaturesGrid since you provided that code for the ecosystem
-import FeaturesGrid from '../components/FeaturesGrid.astro'; 
-
-// Professional Metadata
-const pageTitle = "The Traders Gazette | Institutional Market Intelligence";
-const pageDescription = "Access high-signal macro strategy and data-driven analysis for global markets. Exclusive reports for discerning investors.";
+import Hero from '../components/Hero';
+import Features from '../components/Features';
+import FAQ from '../components/FAQ';
+import CTA from '../components/CTA';
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
-	
-	<div class="overflow-hidden">
-		
-		<HeroMacroThesis />
+<Layout title="Home">
+  <Hero client:load 
+    title="Trade & Market Intelligence Platform"
+    subtitle="Institutional-grade analytics for the top 1%. Access Daily Market Briefs, Advanced Trade Journaling, and Elite Risk Management."
+  />
 
-		<section id="intel" class="scroll-mt-24 relative z-10">
-			<GASReportTeaser />
-		</section>
+  <section id="features" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Intelligence Modules</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          A comprehensive terminal designed for professional market analysis and execution.
+        </p>
+      </div>
 
-		<section id="features" class="scroll-mt-24 bg-[#050505] py-24 relative">
-			<div class="container mx-auto px-4">
-				<div class="text-center mb-16">
-					<h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">The Terminal Ecosystem</h2>
-					<p class="text-[#8B949E] max-w-2xl mx-auto text-lg font-light">
-						Institutional tools redesigned for the modern strategic investor.
-					</p>
-				</div>
-				<FeaturesGrid />
-			</div>
-		</section>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { t: "Daily Market Briefs", d: "Professional daily bias and institutional market analysis." },
+          { t: "Advanced Trade Journal", d: "Deep performance tracking and psychology analytics." },
+          { t: "Advanced Trading Sessions Clock", d: "Real-time global market session overlaps and volatility." },
+          { t: "Advanced Chart", d: "High-performance charting interface for technical precision." },
+          { t: "Economic Calendar", d: "Real-time impact tracking for global economic events." },
+          { t: "Ebooks Library", d: "Curated institutional knowledge and strategy resources." },
+          { t: "Risk Management Hub", d: "Precision lot sizing and drawdown management tools." },
+          { t: "Recommended Brokers", d: "Tier-1 liquidity providers for professional execution." },
+          { t: "News Room", d: "Live institutional headline aggregator for global markets." }
+        ].map((feature) => (
+          <div class="p-8 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-sm hover:border-gold-500/50 transition-all group">
+            <h3 class="text-xl font-bold text-gold-500 mb-3">{feature.t}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{feature.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-		<section class="text-center py-24 relative overflow-hidden bg-[#050505]">
-			
-			<div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#111111] to-[#050505]"></div>
-			<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#DDAA33]/5 blur-[100px] rounded-full pointer-events-none"></div>
-			
-			<div class="relative z-10 container mx-auto px-4">
-				<h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
-					Ready for <span class="text-[#DDAA33] italic">Institutional Insight?</span>
-				</h2>
-				
-				<p class="text-[#8B949E] mb-10 max-w-2xl mx-auto text-xl font-light">
-					Stop chasing news headlines. Start trading with the clarity and precision reserved for the elite 1%.
-				</p>
-				
-				<a 
-					href="https://app.thetradersgazette.com/#auth" 
-					style="background: linear-gradient(145deg, #F0D788, #DDAA33);"
-					class="inline-block text-[#0D0D0D] font-bold text-lg py-4 px-10 rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_20px_rgba(221,170,51,0.4)] hover:brightness-110 transition-all duration-300 transform hover:-translate-y-1"
-				>
-					Access The Terminal
-				</a>
-			</div>
-		</section>
-
-	</div>
-
+  <FAQ client:load />
+  <CTA client:load />
 </Layout>
