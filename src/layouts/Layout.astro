@@ -1,8 +1,6 @@
 ---
 // src/layouts/Layout.astro  
 import '../styles/global.css';  
-  
-// Component Imports
 import Header from '../components/Header'; 
 import Footer from '../components/Footer.astro';  
   
@@ -13,7 +11,7 @@ interface Props {
   
 const { 
   title, 
-  description = "Trader's Gazette is a premier Trade & Market Intelligence Platform. Access Advanced Trade Journaling, Institutional Market Briefs, Risk Management Tools, and XAUUSD Sentiment Analysis. The elite retail alternative to Bloomberg." 
+  description = "Trader's Gazette is the premier Trade & Market Intelligence Platform. Access professional Daily Market Briefs, Advanced Trade Journaling, Risk Management Hub, and Institutional Analytics for global markets." 
 } = Astro.props;  
 ---  
   
@@ -42,16 +40,16 @@ const {
    "name": "Trader's Gazette",
    "operatingSystem": "Web",
    "applicationCategory": "FinanceApplication",
-   "description": "Comprehensive Trade & Market Intelligence Platform featuring advanced analytics for professional traders.",
+   "description": "Professional Trade & Market Intelligence Platform.",
    "featureList": [
      "Daily Market Briefs",
      "Advanced Trade Journal",
      "Advanced Trading Sessions Clock",
-     "Advanced Financial Charts",
+     "Advanced Charts",
      "Economic Calendar",
      "Ebooks Library",
      "Risk Management Hub",
-     "Brokers Directory",
+     "Brokers",
      "News Room"
    ],
    "offers": {
@@ -84,28 +82,11 @@ const {
  </div>  
  </body>  
 </html>  
-  
+
 <style is:global>  
  :root {  
- --gold-50: #fffdf0;  
- --gold-100: #fff9c2;  
- --gold-200: #fff185;  
- --gold-300: #ffe147;  
- --gold-400: #ffcc1a;  
- --gold-500: #e6ac00;  
- --gold-600: #bf8600;  
- --gold-700: #996300;  
- --gold-800: #7a4b00;  
- --gold-900: #663d00;  
+ --gold-50: #fffdf0; --gold-100: #fff9c2; --gold-200: #fff185; --gold-300: #ffe147; --gold-400: #ffcc1a; --gold-500: #e6ac00; --gold-600: #bf8600; --gold-700: #996300; --gold-800: #7a4b00; --gold-900: #663d00;  
  }  
-  
- html {  
- font-family: 'Inter', system-ui, sans-serif;  
- }  
-  
- body {  
- margin: 0;  
- width: 100%;  
- min-height: 100vh;  
- }  
+ html { font-family: 'Inter', system-ui, sans-serif; }  
+ body { margin: 0; width: 100%; min-height: 100vh; }  
 </style>
