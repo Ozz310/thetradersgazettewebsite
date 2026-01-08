@@ -2,18 +2,18 @@
 // src/layouts/Layout.astro  
 import '../styles/global.css';  
   
-// 1. Import the Header and Footer components directly here  
+// Component Imports
 import Header from '../components/Header'; 
 import Footer from '../components/Footer.astro';  
   
 interface Props {  
  title: string;  
- description?: string; // Allow page-specific descriptions
+ description?: string; 
 }  
   
 const { 
   title, 
-  description = "The professional Trade & Market Intelligence Platform. Refine your edge with our Advanced Trade Journal, Real-time Market Briefs, Risk Management Hub, and Institutional Trading Clocks." 
+  description = "Trader's Gazette is a premier Trade & Market Intelligence Platform. Access Advanced Trade Journaling, Institutional Market Briefs, Risk Management Tools, and XAUUSD Sentiment Analysis. The elite retail alternative to Bloomberg." 
 } = Astro.props;  
 ---  
   
@@ -25,7 +25,7 @@ const {
  <meta name="viewport" content="width=device-width" />  
  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />  
  <meta name="generator" content={Astro.generator} />  
- <title>{title} | Trader's Gazette</title>  
+ <title>{title} | Trader's Gazette Intelligence</title>  
 
  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-6YTJXTYYTW"></script>
  <script is:inline>
@@ -42,17 +42,17 @@ const {
    "name": "Trader's Gazette",
    "operatingSystem": "Web",
    "applicationCategory": "FinanceApplication",
-   "description": "Comprehensive Trade & Market Intelligence Platform for professional traders.",
+   "description": "Comprehensive Trade & Market Intelligence Platform featuring advanced analytics for professional traders.",
    "featureList": [
      "Daily Market Briefs",
      "Advanced Trade Journal",
      "Advanced Trading Sessions Clock",
      "Advanced Financial Charts",
-     "Real-time Economic Calendar",
-     "Trading Ebooks Library",
+     "Economic Calendar",
+     "Ebooks Library",
      "Risk Management Hub",
-     "Broker Directory",
-     "Real-time News Room"
+     "Brokers Directory",
+     "News Room"
    ],
    "offers": {
      "@type": "Offer",
@@ -66,20 +66,21 @@ const {
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">  
  </head>  
+
  <body class="bg-slate-950 text-slate-50 selection:bg-gold-500/30">  
  <div class="relative min-h-screen flex flex-col">  
- <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">  
- <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-gold-500/5 rounded-full blur-[120px]"></div>  
- <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px]"></div>  
- </div>  
+   <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">  
+     <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-gold-500/5 rounded-full blur-[120px]"></div>  
+     <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px]"></div>  
+   </div>  
   
- <Header client:load />  
+   <Header client:load />  
   
- <main class="flex-grow relative z-10">  
- <slot />  
- </main>  
+   <main class="flex-grow relative z-10">  
+     <slot />  
+   </main>  
   
- <Footer />  
+   <Footer />  
  </div>  
  </body>  
 </html>  
@@ -108,4 +109,3 @@ const {
  min-height: 100vh;  
  }  
 </style>
-
