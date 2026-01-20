@@ -11,7 +11,7 @@ interface Props {
   
 const { 
   title, 
-  description = "Trader's Gazette is the premier Trade & Market Intelligence Platform. Access professional Daily Market Briefs, Advanced Trade Journaling, Risk Management Hub, and Institutional Analytics for global markets." 
+  description = "Professional market intelligence & trading terminal. Access daily analysis, advanced charts, risk management tools, and trade journaling for Forex, Crypto, & Stocks. Built for structure, discipline, and intent."
 } = Astro.props;  
 ---  
   
@@ -21,10 +21,13 @@ const {
  <meta charset="UTF-8" />  
  <meta name="description" content={description} />  
  <meta name="viewport" content="width=device-width" />  
+ <link rel="canonical" href="https://www.thetradersgazette.com" />
  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />  
  <meta name="generator" content={Astro.generator} />  
+ <meta name="robots" content="index, follow" />
  <title>{title} | Trader's Gazette Intelligence</title>  
 
+ <!-- Google Analytics -->
  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-1S5YJF7H6S"></script>
  <script is:inline>
    window.dataLayer = window.dataLayer || [];
@@ -33,24 +36,44 @@ const {
    gtag('config', 'G-1S5YJF7H6S');
  </script>
 
+ <!-- Organization Schema -->
+ <script type="application/ld+json" is:inline>
+ {
+   "@context": "https://schema.org",
+   "@type": "Organization",
+   "name": "The Trader's Gazette",
+   "url": "https://www.thetradersgazette.com",
+   "logo": "https://www.thetradersgazette.com/logo_tg.jpeg",
+   "description": "A market intelligence and trading systems platform designed for traders and investors who operate with structure, discipline, and intent.",
+   "foundingDate": "2024",
+   "contactPoint": {
+     "@type": "ContactPoint",
+     "contactType": "customer support",
+     "email": "support@thetradersgazette.com"
+   }
+ }
+ </script>
+
+ <!-- Software Application Schema -->
  <script type="application/ld+json" is:inline>
  {
    "@context": "https://schema.org",
    "@type": "SoftwareApplication",
-   "name": "Trader's Gazette",
+   "name": "Trader's Gazette Terminal",
    "operatingSystem": "Web",
    "applicationCategory": "FinanceApplication",
-   "description": "Professional Trade & Market Intelligence Platform.",
+   "description": "Professional Trade & Market Intelligence Platform including Session Clock, Market Briefs, Charts, and Risk Management Tools.",
    "featureList": [
-     "Daily Market Briefs",
-     "Advanced Trade Journal",
-     "Advanced Trading Sessions Clock",
+     "Trading Session Clock",
+     "Daily Market Intelligence Brief",
      "Advanced Charts",
      "Economic Calendar",
-     "Ebooks Library",
-     "Risk Management Hub",
-     "Brokers",
-     "News Room"
+     "Yahoo Finance 24/7 Video Feed",
+     "Aggregated News (500+ articles daily)",
+     "Trade Journal with Visual Analytics",
+     "Trading Notes & To Do list",
+     "E-books Hub",
+     "Risk Management Hub with Tools"
    ],
    "offers": {
      "@type": "Offer",

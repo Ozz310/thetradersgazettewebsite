@@ -1,16 +1,48 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero';
-import Features from '../components/Features';
-import FAQ from '../components/FAQ';
-import CTA from '../components/CTA';
+import HeroMacroThesis from '../components/HeroMacroThesis.astro';
+import PricingTeaser from '../components/PricingTeaser.astro';
 ---
 
 <Layout title="Home">
-  <Hero client:load 
-    title="Trade & Market Intelligence Platform"
-    subtitle="Institutional-grade analytics for the top 1%. Access Daily Market Briefs, Advanced Trade Journaling, and Elite Risk Management."
-  />
+  <HeroMacroThesis />
+
+  <section class="py-20 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gold-500">Who Is TG Terminal For?</h2>
+        <p class="text-slate-300 max-w-3xl mx-auto text-lg">
+          The Trader’s Gazette serves four core trader profiles. Rather than signals or speculation, we emphasize process, probability, and repeatability.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            title: "The Structure Seeker",
+            desc: "Professionals looking for a centralized, organized trading workspace to cut through the noise."
+          },
+          {
+            title: "The Efficiency-Focused",
+            desc: "Traders aiming to streamline analysis, execution, and review processes."
+          },
+          {
+            title: "The Strategic Optimizer",
+            desc: "Experienced market participants refining their analytical edge and risk frameworks."
+          },
+          {
+            title: "The Action-Oriented Learner",
+            desc: "Traders who value tools and frameworks they can implement immediately."
+          }
+        ].map((profile) => (
+          <div class="p-6 rounded-xl border border-slate-800 bg-slate-950/80 hover:border-gold-500/30 transition-all">
+            <h3 class="text-lg font-semibold text-gold-400 mb-2">{profile.title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{profile.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <section id="features" class="py-24 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -23,15 +55,16 @@ import CTA from '../components/CTA';
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
-          { t: "Daily Market Briefs", d: "Professional daily bias and institutional market analysis." },
-          { t: "Advanced Trade Journal", d: "Deep performance tracking and psychology analytics." },
-          { t: "Advanced Trading Sessions Clock", d: "Real-time global market session overlaps and volatility." },
-          { t: "Advanced Chart", d: "High-performance charting interface for technical precision." },
+          { t: "Trading Session Clock", d: "Real-time global market session overlaps and volatility tracking." },
+          { t: "Daily Market Brief", d: "Professional daily bias and institutional market analysis." },
+          { t: "Advanced Charts", d: "High-performance charting interface for technical precision." },
           { t: "Economic Calendar", d: "Real-time impact tracking for global economic events." },
-          { t: "Ebooks Library", d: "Curated institutional knowledge and strategy resources." },
-          { t: "Risk Management Hub", d: "Precision lot sizing and drawdown management tools." },
-          { t: "Recommended Brokers", d: "Tier-1 liquidity providers for professional execution." },
-          { t: "News Room", d: "Live institutional headline aggregator for global markets." }
+          { t: "Yahoo Finance 24/7 Feed", d: "Live video feed integration for real-time financial news." },
+          { t: "Aggregated News", d: "Over 500+ articles updated daily from 6 major channels." },
+          { t: "Visual Trade Journal", d: "Deep performance tracking with visual analytics of trade data." },
+          { t: "Trading Notes & To-Do", d: "Integrated workspace for trade planning and task management." },
+          { t: "E-books Hub", d: "Curated institutional knowledge and strategy resources." },
+          { t: "Risk Management Hub", d: "Precision lot sizing, drawdown management tools, and calculators." }
         ].map((feature) => (
           <div class="p-8 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-sm hover:border-gold-500/50 transition-all group">
             <h3 class="text-xl font-bold text-gold-500 mb-3">{feature.t}</h3>
@@ -42,6 +75,7 @@ import CTA from '../components/CTA';
     </div>
   </section>
 
-  <FAQ client:load />
-  <CTA client:load />
+  <div class="py-12 max-w-7xl mx-auto px-4">
+    <PricingTeaser />
+  </div>
 </Layout>
