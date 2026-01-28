@@ -1,20 +1,24 @@
 ---
-// src/components/ValuePillars.astro
 const pillars = [
   {
-    title: "For Scalpers",
-    description: "Lightning fast execution and data visualization for lower timeframes.",
+    title: "The Structure Seeker",
+    description: "Professionals looking for a centralized, organized trading workspace.",
+    icon: "🏛️"
+  },
+  {
+    title: "The Efficiency-Focused",
+    description: "Traders aiming to streamline analysis, execution, and review processes.",
     icon: "⚡"
   },
   {
-    title: "For Swing Traders",
-    description: "Macro-thesis alignment and multi-day trend tracking tools.",
-    icon: "🌊"
+    title: "The Strategic Optimizer",
+    description: "Experienced market participants refining their analytical edge.",
+    icon: "♟️"
   },
   {
-    title: "For Analysts",
-    description: "Deep-dive fundamental data and correlation matrices.",
-    icon: "📊"
+    title: "The Action-Oriented",
+    description: "Traders who value tools and frameworks they can implement immediately.",
+    icon: "🚀"
   }
 ];
 ---
@@ -27,12 +31,12 @@ const pillars = [
       <p class="text-neutral-400 max-w-2xl mx-auto">Built for every style of professional engagement.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {pillars.map(pillar => (
-        <div class="p-8 rounded-2xl bg-neutral-900/50 border border-white/5 hover:border-[#DDAA33]/30 transition-all duration-300 group">
+        <div class="p-6 rounded-2xl bg-neutral-900/50 border border-white/5 hover:border-[#DDAA33]/30 transition-all duration-300 group hover:-translate-y-1">
           <div class="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">{pillar.icon}</div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-[#DDAA33] transition-colors">{pillar.title}</h3>
-          <p class="text-neutral-400 leading-relaxed">
+          <h3 class="text-lg font-bold text-white mb-3 group-hover:text-[#DDAA33] transition-colors">{pillar.title}</h3>
+          <p class="text-sm text-neutral-400 leading-relaxed">
             {pillar.description}
           </p>
         </div>
