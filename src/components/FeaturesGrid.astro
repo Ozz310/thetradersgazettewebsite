@@ -1,33 +1,47 @@
 ---
 // src/components/FeaturesGrid.astro
-
-// Define the key features of your app
 const features = [
-  { icon: '📊', title: 'Proprietary GAS Index', description: 'Our leading indicator for liquidity and risk appetite, exclusive to members.' },
-  { icon: '⭐', title: 'Daily Alpha Briefs', description: 'Concise, high-signal market actionables delivered before the opening bell.' },
-  { icon: '📉', title: 'Real-time Risk Modeling', description: 'Dynamic dashboard tools for calculating optimal position sizing and portfolio drawdown.' },
-  { icon: '📚', title: 'Elite E-Book Library', description: 'Access to the full library of advanced trading and macro strategy guides.' },
-  { icon: '🗓️', title: 'Global Trading Clock', description: 'Visualized session overlaps and market hours tailored for efficient global trading.' },
-  { icon: '📰', title: 'Curated News Feed', description: 'A filterable stream of finance news, stripped of noise and focusing on high-impact events.' },
+  {
+    title: "Macro Dashboard",
+    description: "Real-time global market health at a glance.",
+    gridArea: "md-span-2"
+  },
+  {
+    title: "Risk Calculator",
+    description: "Instant position sizing based on portfolio equity.",
+    gridArea: "md-span-1"
+  },
+  {
+    title: "Session Outlook",
+    description: "Pre-market analysis and key levels for the day.",
+    gridArea: "md-span-1"
+  },
+  {
+    title: "Asset Correlations",
+    description: "Live heatmaps of cross-asset performance.",
+    gridArea: "md-span-2"
+  }
 ];
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-  {features.map(feature => (
-    /* 🛠️ FIX: Using Neutral Black Card (#111111) via global class or utility */
-    <div class="group bg-[#111111] border border-[#222] rounded-xl p-8 hover:border-[#DDAA33]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black">
-      
-      <div class="text-4xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
-        {feature.icon}
-      </div>
-      
-      <h3 class="text-xl font-serif font-bold text-white mb-3 group-hover:text-[#DDAA33] transition-colors">
-        {feature.title}
-      </h3>
-      
-      <p class="text-[#8B949E] leading-relaxed">
-        {feature.description}
-      </p>
+<section class="py-24 bg-[#050505] relative">
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Intelligence Modules</h2>
+      <p class="text-neutral-400 max-w-2xl mx-auto">A modular system designed for total market awareness.</p>
     </div>
-  ))}
-</div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {features.map((feature, index) => (
+        <div class={`p-8 rounded-2xl border border-neutral-800 bg-[#0a0a0a] hover:bg-neutral-900/80 transition-colors ${index === 0 || index === 3 ? 'md:col-span-2' : 'md:col-span-1'}`}>
+          <h3 class="text-xl font-bold text-white mb-3 text-[#DDAA33]">{feature.title}</h3>
+          <p class="text-neutral-400">
+            {feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
