@@ -2,43 +2,91 @@
 // src/components/FeaturesGrid.astro
 const features = [
   {
-    title: "Macro Dashboard",
-    description: "Real-time global market health at a glance.",
-    gridArea: "md-span-2"
+    title: "Global Session Clock",
+    description: "Real-time tracking of the 5 major exchange sessions (Sydney, Tokyo, London, NY, UTC). Know exactly when volume hits.",
+    icon: "🕒",
+    gridClass: "md:col-span-2 bg-gradient-to-r from-[#0a0a0a] to-[#111]"
   },
   {
-    title: "Risk Calculator",
-    description: "Instant position sizing based on portfolio equity.",
-    gridArea: "md-span-1"
+    title: "Daily Market Intelligence",
+    description: "Curated briefs on the last 24h of price action and upcoming high-impact events.",
+    icon: "📰",
+    gridClass: "md:col-span-1"
   },
   {
-    title: "Session Outlook",
-    description: "Pre-market analysis and key levels for the day.",
-    gridArea: "md-span-1"
+    title: "24/7 News Room",
+    description: "Live feed aggregator processing 500+ sources. Filter noise, find alpha.",
+    icon: "📡",
+    gridClass: "md:col-span-1"
   },
   {
-    title: "Asset Correlations",
-    description: "Live heatmaps of cross-asset performance.",
-    gridArea: "md-span-2"
+    title: "Analysis Hub",
+    description: "Integrated Economic Calendar overlaying an Advanced Charting suite with institutional indicators.",
+    icon: "📈",
+    gridClass: "md:col-span-2 bg-gradient-to-r from-[#0a0a0a] to-[#111]"
+  },
+  {
+    title: "Analytics Journal",
+    description: "Visualized trade performance data. See your equity curve and psychological bias.",
+    icon: "📓",
+    gridClass: "md:col-span-1"
+  },
+  {
+    title: "Knowledge Library",
+    description: "Premium Ebooks and frameworks for continuous technical development.",
+    icon: "📚",
+    gridClass: "md:col-span-1"
+  },
+  {
+    title: "Risk Management Hub",
+    description: "Calculator suite: Margin, Pip Value, R:R, and Position Sizing in one dashboard.",
+    icon: "🛡️",
+    gridClass: "md:col-span-1"
   }
 ];
 ---
 
-<section class="py-24 bg-[#050505] relative">
+<section class="py-32 bg-[#050505] relative border-t border-white/5 overflow-hidden">
+  
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#DDAA33]/5 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#DDAA33]/5 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
+
   <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
     
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Intelligence Modules</h2>
-      <p class="text-neutral-400 max-w-2xl mx-auto">A modular system designed for total market awareness.</p>
+    <div class="text-center mb-20">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+        Intelligence <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F0D788] via-[#DDAA33] to-[#B8860B]">Modules</span>
+      </h2>
+      <p class="text-neutral-400 max-w-2xl mx-auto text-lg">
+        A modular ecosystem designed for total market awareness.
+      </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {features.map((feature, index) => (
-        <div class={`p-8 rounded-2xl border border-neutral-800 bg-[#0a0a0a] hover:bg-neutral-900/80 transition-colors ${index === 0 || index === 3 ? 'md:col-span-2' : 'md:col-span-1'}`}>
-          <h3 class="text-xl font-bold text-white mb-3 text-[#DDAA33]">{feature.title}</h3>
-          <p class="text-neutral-400">
-            {feature.description}
-          </p>
+      {features.map((feature) => (
+        <div class={`relative p-8 rounded-2xl bg-[#0a0a0a] border border-white/5 hover:border-[#DDAA33]/40 transition-all duration-500 group ${feature.gridClass}`}>
+          
+          <div class="absolute inset-0 bg-gradient-to-br from-[#DDAA33]/0 via-[#DDAA33]/5 to-[#DDAA33]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+          
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300 filter drop-shadow-[0_0_15px_rgba(221,170,51,0.2)]">
+                {feature.icon}
+              </div>
+              
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-[#F0D788] transition-colors">
+                {feature.title}
+              </h3>
+              
+              <p class="text-neutral-400 leading-relaxed text-sm">
+                {feature.description}
+              </p>
+            </div>
+            
+            <div class="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[#DDAA33]">
+               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </div>
+          </div>
         </div>
       ))}
     </div>
