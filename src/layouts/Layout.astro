@@ -1,115 +1,90 @@
 ---
-// src/layouts/Layout.astro  
-import '../styles/global.css';  
-import Header from '../components/Header'; 
-import Footer from '../components/Footer.astro';  
-  
-interface Props {  
- title: string;  
- description?: string; 
-}  
-  
-const { 
-  title, 
+// src/layouts/Layout.astro
+import '../styles/global.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
   description = "Professional market intelligence & trading terminal. Access daily analysis, advanced charts, risk management tools, and trade journaling for Forex, Crypto, & Stocks. Built for structure, discipline, and intent."
-} = Astro.props;  
----  
-  
-<!doctype html>  
-<html lang="en" class="scroll-smooth">  
- <head>  
- <meta charset="UTF-8" />  
- <meta name="description" content={description} />  
- <meta name="viewport" content="width=device-width" />  
- <link rel="canonical" href="https://www.thetradersgazette.com" />
- <link rel="icon" type="image/svg+xml" href="/favicon.svg" />  
- <meta name="generator" content={Astro.generator} />  
- <meta name="robots" content="index, follow" />
- <title>{title} | Trader's Gazette Intelligence</title>  
+} = Astro.props;
 
- <!-- Google Analytics -->
- <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-1S5YJF7H6S"></script>
- <script is:inline>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
-   gtag('config', 'G-1S5YJF7H6S');
- </script>
+// SEO BIBLE: Organization Schema with Social Nodes
+const orgSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "The Trader's Gazette",
+  "url": "https://www.thetradersgazette.com",
+  "logo": "https://www.thetradersgazette.com/logo_tg.jpeg",
+  "description": "A market intelligence and trading systems platform designed for traders and investors who operate with structure, discipline, and intent.",
+  "foundingDate": "2024",
+  "sameAs": [
+    "https://www.linkedin.com/company/the-traders-gazette",
+    "https://www.facebook.com/share/1M8F5rxTWr/",
+    "https://www.instagram.com/thetradersgazette?igsh=bnQzaWE4YzlmZXVp"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "support@thetradersgazette.com"
+  }
+});
+---
 
- <!-- Organization Schema -->
- <script type="application/ld+json" is:inline>
- {
-   "@context": "https://schema.org",
-   "@type": "Organization",
-   "name": "The Trader's Gazette",
-   "url": "https://www.thetradersgazette.com",
-   "logo": "https://www.thetradersgazette.com/logo_tg.jpeg",
-   "description": "A market intelligence and trading systems platform designed for traders and investors who operate with structure, discipline, and intent.",
-   "foundingDate": "2024",
-   "contactPoint": {
-     "@type": "ContactPoint",
-     "contactType": "customer support",
-     "email": "support@thetradersgazette.com"
-   }
- }
- </script>
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="canonical" href="https://www.thetradersgazette.com" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow" />
+    <title>{title} | The Trader's Gazette</title>
 
- <!-- Software Application Schema -->
- <script type="application/ld+json" is:inline>
- {
-   "@context": "https://schema.org",
-   "@type": "SoftwareApplication",
-   "name": "Trader's Gazette Terminal",
-   "operatingSystem": "Web",
-   "applicationCategory": "FinanceApplication",
-   "description": "Professional Trade & Market Intelligence Platform including Session Clock, Market Briefs, Charts, and Risk Management Tools.",
-   "featureList": [
-     "Trading Session Clock",
-     "Daily Market Intelligence Brief",
-     "Advanced Charts",
-     "Economic Calendar",
-     "Yahoo Finance 24/7 Video Feed",
-     "Aggregated News (500+ articles daily)",
-     "Trade Journal with Visual Analytics",
-     "Trading Notes & To Do list",
-     "E-books Hub",
-     "Risk Management Hub with Tools"
-   ],
-   "offers": {
-     "@type": "Offer",
-     "price": "0",
-     "priceCurrency": "USD"
-   }
- }
- </script>
-   
- <link rel="preconnect" href="https://fonts.googleapis.com">  
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">  
- </head>  
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-1S5YJF7H6S"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1S5YJF7H6S');
+    </script>
 
- <body class="bg-slate-950 text-slate-50 selection:bg-gold-500/30">  
- <div class="relative min-h-screen flex flex-col">  
-   <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">  
-     <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-gold-500/5 rounded-full blur-[120px]"></div>  
-     <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px]"></div>  
-   </div>  
-  
-   <Header client:load />  
-  
-   <main class="flex-grow relative z-10">  
-     <slot />  
-   </main>  
-  
-   <Footer />  
- </div>  
- </body>  
-</html>  
+    <script type="application/ld+json" set:html={orgSchema} />
 
-<style is:global>  
- :root {  
- --gold-50: #fffdf0; --gold-100: #fff9c2; --gold-200: #fff185; --gold-300: #ffe147; --gold-400: #ffcc1a; --gold-500: #e6ac00; --gold-600: #bf8600; --gold-700: #996300; --gold-800: #7a4b00; --gold-900: #663d00;  
- }  
- html { font-family: 'Inter', system-ui, sans-serif; }  
- body { margin: 0; width: 100%; min-height: 100vh; }  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="bg-[#050505] text-slate-50 selection:bg-gold-500/30">
+    <div class="relative min-h-screen flex flex-col">
+      <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-gold-500/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px]"></div>
+      </div>
+
+      <Header client:load />
+
+      <main class="flex-grow relative z-10">
+        <slot />
+      </main>
+
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --gold-50: #fffdf0; --gold-100: #fff9c2; --gold-200: #fff185; --gold-300: #ffe147; --gold-400: #ffcc1a; --gold-500: #e6ac00; --gold-600: #bf8600; --gold-700: #996300; --gold-800: #7a4b00; --gold-900: #663d00;
+  }
+  html { font-family: 'Inter', system-ui, sans-serif; }
+  body { margin: 0; width: 100%; min-height: 100vh; }
 </style>
