@@ -3,21 +3,37 @@ import Layout from '../layouts/Layout.astro';
 import HeroMacroThesis from '../components/HeroMacroThesis.astro';
 import PricingTeaser from '../components/PricingTeaser.astro';
 
-// AIO/SEO: Schema for "Financial Software" dominance
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "The Trader's Gazette Terminal",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+// AIO/SEO BIBLE: Hybrid Schema
+// 1. SoftwareApplication: Defines the Terminal.
+// 2. Person: Links Mohammad Osama (Founder) to the content for Authority (E-E-A-T).
+const schema = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "The Trader's Gazette Terminal",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Market Intelligence, Trade Journaling, Risk Calculator, Economic Calendar",
+    "description": "Institutional-grade market intelligence and trade journaling terminal for professional traders."
   },
-  "featureList": "Market Intelligence, Trade Journaling, Risk Calculator, Economic Calendar",
-  "description": "Institutional-grade market intelligence and trade journaling terminal for professional traders."
-});
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohammad Osama",
+    "jobTitle": "Founder & Operations",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "The Trader's Gazette"
+    },
+    "url": "http://www.linkedin.com/in/mohammad-osama-4247729b",
+    "description": "Strategic Lead & Founder of The Trader's Gazette, specializing in institutional market intelligence."
+  }
+]);
 ---
 
 <Layout title="The Trader's Gazette | Institutional Market Intelligence">
