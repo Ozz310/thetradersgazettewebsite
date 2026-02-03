@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import HeroMacroThesis from '../components/HeroMacroThesis.astro';
 import PricingTeaser from '../components/PricingTeaser.astro';
-import IdentityGrid from '../components/IdentityGrid.astro'; // <--- NEW IMPORT
+import IdentityGrid from '../components/IdentityGrid.astro';
+import IntelligenceGrid from '../components/IntelligenceGrid.astro'; // <--- NEW IMPORT
 
 // AIO/SEO BIBLE: Hybrid Schema
 const schema = JSON.stringify([
@@ -100,77 +101,7 @@ const schema = JSON.stringify([
 
   <IdentityGrid />
 
-  <section id="features" class="py-32 bg-[#030303] relative overflow-hidden">
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-24">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-100">
-          Intelligence <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#F0D788] to-[#DDAA33]">Modules</span>
-        </h2>
-        <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-          A modular ecosystem designed for total market awareness. No fluff. Just data.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
-        
-        <div class="md:col-span-2 p-8 rounded-3xl border border-white/10 bg-[#080808] hover:border-gold-500/40 transition-all group relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 blur-[60px] rounded-full group-hover:bg-gold-500/20 transition-all"></div>
-          <h3 class="text-2xl font-bold text-slate-100 mb-2 group-hover:text-gold-400 transition-colors">Daily Market Intelligence</h3>
-          <p class="text-slate-400 text-sm mb-6 max-w-md">Institutional-grade daily bias, volatility analysis, and cross-asset matrix (FX, Crypto, Commodities) delivered before London Open.</p>
-          <div class="flex items-center gap-2 text-xs font-mono text-gold-500/60 uppercase tracking-wider">
-            <span>• Executive Brief</span>
-            <span>• Forward Scanner</span>
-            <span>• Analyst Verdict</span>
-          </div>
-        </div>
-
-        <div class="md:row-span-2 p-8 rounded-3xl border border-white/10 bg-[#080808] hover:border-gold-500/40 transition-all group flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 mb-4 rounded-full bg-slate-900 border border-white/5 flex items-center justify-center text-gold-500">
-               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            </div>
-            <h3 class="text-xl font-bold text-slate-100 mb-2">Global Session Clock</h3>
-            <p class="text-slate-400 text-sm">Real-time liquidity tracking. Know exactly when London and NY overlap for maximum volatility.</p>
-          </div>
-          <div class="mt-8 border-t border-white/5 pt-4">
-             <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
-               <div class="h-full w-2/3 bg-gold-500/50"></div>
-             </div>
-             <div class="flex justify-between text-[10px] text-slate-500 mt-2 font-mono">
-               <span>LDN</span>
-               <span class="text-gold-500">OVERLAP</span>
-               <span>NY</span>
-             </div>
-          </div>
-        </div>
-
-        {[
-          { t: "24/7 News Room", d: "Live feed aggregator processing 500+ sources. Filter noise & find the right news." },
-          { t: "Analysis Hub", d: "Integrated Economic Calendar overlaying an Advanced Charting suite with institutional indicators." },
-          { t: "Visual Trade Journal", d: "Deep performance tracking with visual analytics. See your equity curve and psychological bias." },
-          { t: "Knowledge Library", d: "Premium E-books and frameworks for continuous technical development." }
-        ].map((feature) => (
-          <div class="p-8 rounded-3xl border border-white/10 bg-[#080808] hover:border-gold-500/40 transition-all group hover:bg-[#0A0A0A]">
-            <h3 class="text-lg font-bold text-slate-200 mb-3 group-hover:text-gold-400 transition-colors">{feature.t}</h3>
-            <p class="text-slate-500 text-sm leading-relaxed group-hover:text-slate-400">{feature.d}</p>
-          </div>
-        ))}
-        
-        <div class="md:col-span-2 p-8 rounded-3xl border border-white/10 bg-[#080808] hover:border-gold-500/40 transition-all group flex items-center justify-between">
-          <div>
-            <h3 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-gold-400">Risk Management Hub</h3>
-            <p class="text-slate-400 text-sm">Calculator suite: Margin, Pip Value, R:R, and Position Sizing in one dashboard.</p>
-          </div>
-          <div class="hidden md:block w-12 h-12 rounded-full border border-gold-500/20 flex items-center justify-center text-gold-500">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <IntelligenceGrid />
 
   <div class="py-12 max-w-7xl mx-auto px-4">
     <PricingTeaser />
