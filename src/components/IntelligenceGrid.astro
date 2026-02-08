@@ -1,6 +1,6 @@
 ---
-// COMPONENT: IntelligenceGrid (Cinematic Portals - Phase 1)
-// STATUS: Session Clock = LIVE ASSET | Others = Phantom Structure Ready
+// COMPONENT: IntelligenceGrid (Cinematic Portals - v2 High Fidelity)
+// FIX: Restored image visibility, removed grayscale, added CSS masking for "Bloomberg Fade"
 ---
 
 <section id="features" class="py-32 bg-[#050505] relative overflow-hidden">
@@ -41,32 +41,33 @@
 
       <a href="/features#session-clock" class="md:row-span-2 group relative rounded-2xl bg-[#080808] border border-white/5 overflow-hidden transition-all duration-500 hover:border-gold-500/40 flex flex-col justify-end">
         
-        <div class="absolute inset-0 z-0">
+        <div class="absolute top-0 left-0 w-full h-[70%] z-0 overflow-hidden">
             <img 
                 src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/Shot_Session_Clock.PNG" 
                 alt="Global Session Clock Interface" 
-                class="w-full h-full object-cover grayscale opacity-20 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700 mix-blend-screen"
+                class="w-full h-full object-cover object-top opacity-80 group-hover:scale-105 transition-all duration-700"
+                style="mask-image: linear-gradient(to bottom, black 50%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);"
             />
         </div>
 
-        <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/60 to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent z-10 pointer-events-none"></div>
         
-        <div class="absolute top-8 right-8 flex items-center gap-2 z-20">
+        <div class="absolute top-6 right-6 flex items-center gap-2 z-20">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-gold-500"></span>
             </span>
-            <span class="text-[10px] font-mono text-gold-500 tracking-widest">LIVE</span>
+            <span class="text-[10px] font-mono text-gold-500 tracking-widest bg-black/50 px-2 py-1 rounded border border-gold-500/20 backdrop-blur-sm">LIVE</span>
         </div>
 
         <div class="relative z-20 p-8">
            <div class="mb-4">
-             <div class="flex gap-1 h-16 items-end mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
-                <div class="w-2 bg-slate-800 h-[40%] rounded-sm"></div>
-                <div class="w-2 bg-slate-800 h-[60%] rounded-sm"></div>
-                <div class="w-2 bg-gold-500 h-[100%] rounded-sm shadow-[0_0_10px_#F0D788]"></div>
-                <div class="w-2 bg-slate-800 h-[80%] rounded-sm"></div>
-                <div class="w-2 bg-slate-800 h-[50%] rounded-sm"></div>
+             <div class="flex gap-1 h-12 items-end mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
+                <div class="w-1.5 bg-slate-800 h-[40%] rounded-sm"></div>
+                <div class="w-1.5 bg-slate-800 h-[60%] rounded-sm"></div>
+                <div class="w-1.5 bg-gold-500 h-[100%] rounded-sm shadow-[0_0_10px_#F0D788]"></div>
+                <div class="w-1.5 bg-slate-800 h-[80%] rounded-sm"></div>
+                <div class="w-1.5 bg-slate-800 h-[50%] rounded-sm"></div>
              </div>
            </div>
            
@@ -75,7 +76,7 @@
              Visualize liquidity. Know exactly when London and NY overlap for maximum volatility.
            </p>
            
-           <span class="text-xs text-gold-400 font-bold border-b border-gold-400/30 pb-0.5">Explore Utility &rarr;</span>
+           <span class="text-xs text-gold-400 font-bold border-b border-gold-400/30 pb-0.5 group-hover:text-white transition-colors">Explore Utility &rarr;</span>
         </div>
       </a>
 
