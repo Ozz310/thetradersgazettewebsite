@@ -1,6 +1,6 @@
 ---
-// COMPONENT: IntelligenceGrid (Cinematic Portals - v2 High Fidelity)
-// FIX: Restored image visibility, removed grayscale, added CSS masking for "Bloomberg Fade"
+// COMPONENT: IntelligenceGrid (Cinematic Portals - v3 3D Studio)
+// UPGRADE: Implements CSS 3D Transforms to create "Physical" Product Shots from raw screenshots.
 ---
 
 <section id="features" class="py-32 bg-[#050505] relative overflow-hidden">
@@ -39,18 +39,20 @@
         </div>
       </a>
 
-      <a href="/features#session-clock" class="md:row-span-2 group relative rounded-2xl bg-[#080808] border border-white/5 overflow-hidden transition-all duration-500 hover:border-gold-500/40 flex flex-col justify-end">
+      <a href="/features#session-clock" class="md:row-span-2 group relative rounded-2xl bg-[#080808] border border-white/5 overflow-hidden transition-all duration-500 hover:border-gold-500/40 flex flex-col justify-end perspective-1000">
         
-        <div class="absolute top-0 left-0 w-full h-[70%] z-0 overflow-hidden">
-            <img 
-                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/Shot_Session_Clock.PNG" 
-                alt="Global Session Clock Interface" 
-                class="w-full h-full object-cover object-top opacity-80 group-hover:scale-105 transition-all duration-700"
-                style="mask-image: linear-gradient(to bottom, black 50%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);"
-            />
+        <div class="absolute top-10 left-10 w-[90%] h-[65%] z-0 transition-all duration-700 ease-out transform group-hover:scale-105 group-hover:rotate-y-0 group-hover:rotate-x-0 -rotate-y-12 rotate-x-6">
+            <div class="relative w-full h-full rounded-lg shadow-2xl shadow-black/80 border border-white/10 bg-[#0A0A0A] overflow-hidden">
+                <img 
+                    src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/Shot_Session_Clock.PNG" 
+                    alt="Global Session Clock Interface" 
+                    class="w-full h-full object-cover opacity-90 mix-blend-normal"
+                />
+                <div class="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none"></div>
+            </div>
         </div>
 
-        <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/20 to-transparent z-10 pointer-events-none"></div>
         
         <div class="absolute top-6 right-6 flex items-center gap-2 z-20">
             <span class="relative flex h-2 w-2">
@@ -60,22 +62,11 @@
             <span class="text-[10px] font-mono text-gold-500 tracking-widest bg-black/50 px-2 py-1 rounded border border-gold-500/20 backdrop-blur-sm">LIVE</span>
         </div>
 
-        <div class="relative z-20 p-8">
-           <div class="mb-4">
-             <div class="flex gap-1 h-12 items-end mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
-                <div class="w-1.5 bg-slate-800 h-[40%] rounded-sm"></div>
-                <div class="w-1.5 bg-slate-800 h-[60%] rounded-sm"></div>
-                <div class="w-1.5 bg-gold-500 h-[100%] rounded-sm shadow-[0_0_10px_#F0D788]"></div>
-                <div class="w-1.5 bg-slate-800 h-[80%] rounded-sm"></div>
-                <div class="w-1.5 bg-slate-800 h-[50%] rounded-sm"></div>
-             </div>
-           </div>
-           
+        <div class="relative z-20 p-8 mt-auto">
            <h3 class="text-xl font-bold text-white mb-2">Global Session Clock</h3>
            <p class="text-slate-400 text-sm leading-relaxed mb-4">
              Visualize liquidity. Know exactly when London and NY overlap for maximum volatility.
            </p>
-           
            <span class="text-xs text-gold-400 font-bold border-b border-gold-400/30 pb-0.5 group-hover:text-white transition-colors">Explore Utility &rarr;</span>
         </div>
       </a>
@@ -117,3 +108,20 @@
     </div>
   </div>
 </section>
+
+<style>
+  /* UTILITY CLASS FOR 3D SPACE */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  /* UTILITY FOR 3D ROTATION */
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+  .-rotate-y-12 {
+    transform: rotateY(-12deg);
+  }
+  .rotate-x-6 {
+    transform: rotateX(6deg);
+  }
+</style>
