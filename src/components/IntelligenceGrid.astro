@@ -1,183 +1,153 @@
 ---
-// COMPONENT: IntelligenceGrid (Sovereign Glass - Final Assembly)
-// ASSETS: Live v2.5 Hybrid Renders (All Modules)
-// ANIMATION: CSS 3D Tilt enabled for interactive depth on ALL cards
+// COMPONENT: IntelligenceGrid (The Sovereign Desk Layout)
+// STATUS: 
+// - Layout: 3-Row Tetris (Skyscraper Clock + Full Width Risk)
+// - Visuals: "Header-First" design for maximum image visibility
+// - Assets: All v2.5 Hybrid Links mapped
 ---
 
 <section id="features" class="py-32 bg-[#050505] relative overflow-hidden">
   <div class="absolute inset-0 bg-[#050505]"></div>
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-gold-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-gold-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
-    <div class="text-center mb-24">
+    <div class="text-center mb-20">
       <h2 class="text-3xl md:text-5xl font-serif font-bold text-slate-100 mb-6">
         Intelligence <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#F0D788] to-[#DDAA33]">Modules</span>
       </h2>
       <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-        Institutional-grade tools designed for total market awareness. No fluff. Just data.
+        Institutional-grade tools designed for total market awareness.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(320px,auto)]">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
       
-      <a href="/features#market-brief" class="md:col-span-2 group relative rounded-2xl bg-[#080808] border border-white/5 overflow-hidden flex flex-col perspective-1000">
+      <a href="/features#market-brief" class="md:col-span-2 relative group rounded-3xl bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col min-h-[320px] transition-all duration-500 hover:border-gold-500/30 hover:shadow-[0_0_30px_-10px_rgba(221,170,51,0.1)]">
         
-        <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/80 to-transparent z-10 pointer-events-none"></div>
-
-        <div class="absolute top-0 right-0 w-[70%] h-full z-0 transition-all duration-700 ease-out transform group-hover:scale-[1.02] group-hover:rotate-y-0 group-hover:rotate-x-0 rotate-y-6 rotate-x-3 translate-x-12 translate-y-6">
-            <img 
-                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
-                alt="Daily Market Intelligence Report showing executive brief and sentiment analysis" 
-                class="w-full h-full object-contain object-right-bottom opacity-90 drop-shadow-2xl"
-                loading="eager"
-            />
-        </div>
-        
-        <div class="relative z-20 p-8 mt-auto max-w-md">
-          <div class="flex items-center gap-2 mb-3">
+        <div class="relative z-20 p-8">
+           <div class="flex items-center gap-3 mb-2">
              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold-500/10 text-gold-400 border border-gold-500/20 uppercase tracking-wider">Flagship</span>
              <h3 class="text-2xl font-bold text-white">Daily Market Intelligence</h3>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 group-hover:text-slate-200 transition-colors">
-            Institutional-grade daily bias, volatility analysis, and cross-asset matrix delivered before London Open.
-          </p>
-          <div class="flex items-center gap-2 text-gold-400 text-sm font-bold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-             <span>View Sample Report</span>
-             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </div>
+           </div>
+           <p class="text-slate-400 text-sm max-w-md group-hover:text-slate-300 transition-colors">
+             Institutional daily bias & volatility matrix delivered before London Open.
+           </p>
+        </div>
+
+        <div class="absolute bottom-0 right-0 w-[65%] h-[85%] z-10 transition-all duration-700 ease-out transform translate-x-8 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:scale-105">
+           <img 
+             src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
+             alt="Daily Market Intelligence Report" 
+             class="w-full h-full object-contain object-bottom drop-shadow-2xl"
+             loading="eager"
+           />
         </div>
       </a>
 
-      <a href="/features#session-clock" class="md:row-span-2 group relative rounded-2xl bg-[#080808] border border-white/5 overflow-hidden flex flex-col justify-end perspective-1000">
+      <a href="/features#session-clock" class="md:row-span-3 relative group rounded-3xl bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col justify-between transition-all duration-500 hover:border-gold-500/30 hover:shadow-[0_0_30px_-10px_rgba(221,170,51,0.1)]">
         
-        <div class="absolute top-10 left-4 w-[100%] h-[60%] z-0 transition-all duration-700 ease-out transform group-hover:scale-[1.03] group-hover:rotate-y-0 group-hover:rotate-x-0 -rotate-y-12 rotate-x-6">
-            <img 
-                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_session_clock.png" 
-                alt="Global Session Clock widget tracking London and New York trading hours" 
-                class="w-full h-auto object-contain drop-shadow-2xl"
-                loading="eager"
-            />
-        </div>
-
-        <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent z-10 pointer-events-none"></div>
-        
-        <div class="absolute top-6 right-6 flex items-center gap-2 z-20">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-gold-500"></span>
-            </span>
-            <span class="text-[10px] font-mono text-gold-500 tracking-widest bg-black/50 px-2 py-1 rounded border border-gold-500/20 backdrop-blur-sm">LIVE</span>
-        </div>
-
-        <div class="relative z-20 p-8 mt-auto">
-           <h3 class="text-xl font-bold text-white mb-2">Global Session Clock</h3>
-           <p class="text-slate-400 text-sm leading-relaxed mb-4">
-             Visualize liquidity. Know exactly when London and NY overlap for maximum volatility.
+        <div class="relative z-20 p-8 pb-0">
+           <div class="flex justify-between items-start mb-2">
+             <h3 class="text-2xl font-bold text-white">Session Clock</h3>
+             <span class="text-[10px] font-mono text-gold-500 tracking-widest bg-black/50 px-2 py-1 rounded border border-gold-500/20 backdrop-blur-sm animate-pulse">LIVE</span>
+           </div>
+           <p class="text-slate-400 text-sm leading-relaxed">
+             Visualize liquidity overlap zones.
            </p>
-           <span class="text-xs text-gold-400 font-bold border-b border-gold-400/30 pb-0.5 group-hover:text-white transition-colors">Explore Utility &rarr;</span>
         </div>
+
+        <div class="relative w-full h-[600px] flex items-end justify-center z-10 -mb-12">
+            <div class="w-[140%] h-full transition-all duration-700 ease-out transform group-hover:scale-105 group-hover:-translate-y-4">
+               <img 
+                 src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_session_clock.png" 
+                 alt="Global Session Clock" 
+                 class="w-full h-full object-contain object-center drop-shadow-2xl"
+                 loading="eager"
+               />
+            </div>
+        </div>
+        
+        <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0A0A0A] to-transparent z-20 pointer-events-none"></div>
       </a>
 
       {[
         { 
           t: "24/7 News Room", 
-          d: "Live feed aggregator processing 500+ sources. Filter noise & find the narrative.", 
+          d: "Live feed aggregator. Filter noise.", 
           link: "#news",
-          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_news_room.png",
-          alt: "Real-time financial news dashboard aggregating global markets"
+          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_news_room.png"
         },
         { 
           t: "Analysis Hub", 
-          d: "Integrated Economic Calendar overlaying an Advanced Charting suite.", 
+          d: "Economic Calendar & Advanced Charts.", 
           link: "#analysis",
-          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_chart.png",
-          alt: "Advanced technical analysis charting suite with gold price action"
+          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_chart.png"
         },
         { 
-          t: "Visual Trade Journal", 
-          d: "Deep performance tracking with visual analytics. See your equity curve.", 
+          t: "Trade Journal", 
+          d: "Track performance & equity curve.", 
           link: "#journal",
-          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_journal.png",
-          alt: "Trading journal analytics dashboard showing equity curve and performance stats"
+          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_journal.png"
         },
         { 
-          t: "Knowledge Library", 
-          d: "Premium E-books and frameworks for continuous technical development.", 
+          t: "Knowledge Hub", 
+          d: "Premium E-books & frameworks.", 
           link: "#library",
-          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_ebook_hub.png",
-          alt: "Digital library of trading e-books and technical analysis educational resources"
+          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_ebook_hub.png"
         }
       ].map((item) => (
-        <a href={`/features${item.link}`} class="group relative rounded-2xl bg-[#080808] border border-white/5 overflow-hidden transition-all duration-500 hover:border-gold-500/40 flex flex-col justify-end min-h-[280px] perspective-1000">
+        <a href={`/features${item.link}`} class="relative group rounded-3xl bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col min-h-[280px] transition-all duration-500 hover:border-gold-500/30 hover:shadow-[0_0_30px_-10px_rgba(221,170,51,0.1)]">
           
-          <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/90 to-transparent z-10 pointer-events-none"></div>
-          <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gold-500/20 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-20 p-6">
+            <h3 class="text-lg font-bold text-slate-200 mb-1 group-hover:text-white transition-colors">{item.t}</h3>
+            <p class="text-slate-500 text-xs leading-relaxed group-hover:text-slate-400">{item.d}</p>
+          </div>
 
-          <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[85%] h-[60%] z-0 transition-all duration-500 ease-out transform translate-y-8 group-hover:translate-y-0 group-hover:scale-105 rotate-x-6">
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[65%] z-10 transition-all duration-500 ease-out transform translate-y-6 group-hover:translate-y-2 group-hover:scale-105">
              <img 
                src={item.img} 
-               alt={item.alt}
-               class="w-full h-full object-contain object-top drop-shadow-xl opacity-80 group-hover:opacity-100 transition-opacity"
+               alt={item.t}
+               class="w-full h-full object-contain object-top drop-shadow-xl"
                loading="lazy"
              />
           </div>
-
-          <div class="relative z-20 p-8">
-            <h3 class="text-lg font-bold text-slate-200 mb-2 group-hover:text-white transition-colors">{item.t}</h3>
-            <p class="text-slate-500 text-sm leading-relaxed group-hover:text-slate-300">{item.d}</p>
-          </div>
+          
+          <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A0A0A] to-transparent z-20 pointer-events-none"></div>
         </a>
       ))}
 
-      <a href="/features#risk-hub" class="md:col-span-2 group relative rounded-2xl bg-[#080808] border border-white/5 overflow-hidden flex items-center perspective-1000">
+      <a href="/features#risk-hub" class="md:col-span-3 relative group rounded-3xl bg-[#0A0A0A] border border-white/5 overflow-hidden flex items-center min-h-[280px] transition-all duration-500 hover:border-gold-500/30 hover:shadow-[0_0_30px_-10px_rgba(221,170,51,0.1)]">
          
-         <div class="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/90 to-transparent z-10 pointer-events-none"></div>
+         <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A] to-transparent z-10 pointer-events-none"></div>
          
-         <div class="absolute -right-12 top-4 w-[60%] h-[120%] z-0 transition-all duration-700 ease-out transform group-hover:scale-[1.02] group-hover:rotate-y-0 group-hover:rotate-x-0 rotate-y-12 rotate-x-6">
+         <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[60%] h-[120%] z-0 transition-all duration-700 ease-out transform translate-x-10 group-hover:translate-x-0 group-hover:scale-105">
              <img 
                 src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.png" 
-                alt="Risk Management Calculator interface for margin and position sizing" 
-                class="w-full h-full object-contain object-center opacity-80 drop-shadow-2xl"
+                alt="Risk Management Calculator" 
+                class="w-full h-full object-contain object-left drop-shadow-2xl opacity-100"
                 loading="lazy"
              />
          </div>
          
-         <div class="relative z-20 p-8 w-full flex justify-between items-center">
-            <div class="max-w-sm">
-              <h3 class="text-xl font-bold text-white mb-2">Risk Management Hub</h3>
-              <p class="text-slate-400 text-sm">
-                Calculator suite: Margin, Pip Value, R:R, and Position Sizing. Never trade blind again.
-              </p>
+         <div class="relative z-20 p-10 w-full md:w-1/2">
+            <div class="flex items-center gap-3 mb-4">
+               <div class="p-2 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-500">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+               </div>
+               <h3 class="text-2xl font-bold text-white">Risk Management Console</h3>
             </div>
-            <div class="hidden md:flex h-12 w-12 rounded-full border border-white/10 items-center justify-center text-slate-500 group-hover:text-gold-500 group-hover:border-gold-500 transition-all z-20 relative">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/></svg>
-            </div>
+            
+            <p class="text-slate-400 text-base mb-6 max-w-sm">
+              The professional's edge. Integrated calculator suite for Margin, Pip Value, R:R, and Position Sizing.
+            </p>
+            
+            <span class="inline-flex items-center text-sm font-bold text-gold-400 group-hover:text-gold-300 transition-colors">
+              Access Calculator <span class="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </span>
          </div>
       </a>
 
     </div>
   </div>
 </section>
-
-<style>
-  /* 3D PERSPECTIVE UTILITIES */
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  .rotate-y-6 {
-    transform: rotateY(6deg);
-  }
-  .rotate-y-12 {
-    transform: rotateY(12deg);
-  }
-  .-rotate-y-12 {
-    transform: rotateY(-12deg);
-  }
-  .rotate-x-3 {
-    transform: rotateX(3deg);
-  }
-  .rotate-x-6 {
-    transform: rotateX(6deg);
-  }
-</style>
