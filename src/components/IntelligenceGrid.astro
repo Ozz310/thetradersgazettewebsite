@@ -1,11 +1,10 @@
 ---
-// COMPONENT: IntelligenceGrid (The Sovereign Desk - Final Mobile Polish)
+// COMPONENT: IntelligenceGrid (The Sovereign Desk - Final Desktop/Mobile Hybrid)
 // STATUS: DEPLOY READY
 // FIXES: 
-// 1. Mobile State: FLAT & VISIBLE (rotate-0, translate-y-0).
-// 2. Desktop State: 3D & PEEKING (rotate-x-6, translate-y-4).
-// 3. Desktop Hover: ANIMATED (scale-105, translate-y-0).
-// 4. News Room link fixed to .png
+// 1. Desktop Hover RESTORED: Increased hiding distance to 'md:translate-y-10' so the pop-up is visible.
+// 2. Mobile Visibility LOCKED: 'translate-y-0' ensures it never hides on phone.
+// 3. Context Lock: All links and text content preserved exactly.
 // ASSETS: v2.5 Hybrid Product Shots (Linked)
 ---
 
@@ -69,7 +68,7 @@
             <p class="text-slate-500 text-xs md:text-sm leading-relaxed group-hover:text-slate-400">{item.d}</p>
           </div>
 
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[70%] md:h-[65%] z-10 transition-all duration-500 ease-out transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom">
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[70%] md:h-[65%] z-10 transition-all duration-500 ease-out transform translate-y-0 md:translate-y-10 md:group-hover:translate-y-0 scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom">
              <img src={item.img} alt={item.alt} class="w-full h-full object-contain object-top drop-shadow-xl" loading="lazy" />
           </div>
           <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A0A0A] to-transparent z-20 pointer-events-none"></div>
