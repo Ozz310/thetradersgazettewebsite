@@ -1,8 +1,8 @@
 ---
-// COMPONENT: IntelligenceGrid (The Sovereign Desk - Final)
-// LAYOUT: Responsive Tetris Grid (Mobile Stack -> Tablet/Desktop 3-Column)
+// COMPONENT: IntelligenceGrid (The Sovereign Desk - Mobile Optimized)
+// STATUS: FIX DEPLOYED for Mobile "Empty Card" Issue
+// LOGIC: Images are PERMANENTLY VISIBLE on mobile, only "Peek" on desktop.
 // ASSETS: v2.5 Hybrid Product Shots (Linked)
-// OPTIMIZATION: Mobile First, Lazy Loading, High-DPI Scaling
 ---
 
 <section id="features" class="py-24 md:py-32 bg-[#050505] relative overflow-hidden">
@@ -34,7 +34,7 @@
            </p>
         </div>
 
-        <div class="absolute bottom-0 right-0 w-[85%] md:w-[75%] h-[80%] z-10 transition-all duration-700 ease-out transform translate-x-4 translate-y-8 md:translate-x-8 md:translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 group-hover:scale-105 rotate-y-6 rotate-x-3">
+        <div class="absolute bottom-0 right-0 w-[85%] md:w-[75%] h-[80%] z-10 transition-all duration-700 ease-out transform translate-x-4 translate-y-0 md:translate-x-8 md:translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 group-hover:scale-105 rotate-y-6 rotate-x-3">
            <img 
              src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
              alt="Daily Market Intelligence Report showing executive brief" 
@@ -75,7 +75,7 @@
           t: "24/7 News Room", 
           d: "Live feed aggregator. Filter noise.", 
           link: "#news",
-          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_news_room.png",
+          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_news_room.jpg",
           alt: "Real-time News Aggregator Dashboard"
         },
         { 
@@ -96,7 +96,7 @@
           t: "Knowledge Hub", 
           d: "Premium E-books & frameworks.", 
           link: "#library",
-          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_ebook_hub.png",
+          img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_ebook_hub.jpg",
           alt: "Educational Library and E-Books"
         }
       ].map((item) => (
@@ -107,7 +107,7 @@
             <p class="text-slate-500 text-xs md:text-sm leading-relaxed group-hover:text-slate-400">{item.d}</p>
           </div>
 
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[60%] md:h-[65%] z-10 transition-all duration-500 ease-out transform translate-y-4 group-hover:translate-y-0 group-hover:scale-105 rotate-x-6 origin-bottom">
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[60%] md:h-[65%] z-10 transition-all duration-500 ease-out transform translate-y-0 md:translate-y-4 group-hover:translate-y-0 group-hover:scale-105 rotate-x-6 origin-bottom">
              <img 
                src={item.img} 
                alt={item.alt}
@@ -126,7 +126,7 @@
          
          <div class="absolute bottom-0 md:top-1/2 md:bottom-auto left-1/2 md:left-auto md:right-0 md:-translate-y-1/2 -translate-x-1/2 md:translate-x-10 w-[90%] md:w-[60%] h-[50%] md:h-[120%] z-0 transition-all duration-700 ease-out transform group-hover:scale-[1.02] group-hover:rotate-y-0 group-hover:rotate-x-0 rotate-y-6 md:rotate-y-12 rotate-x-6 md:rotate-x-6">
              <img 
-                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.png" 
+                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.jpg" 
                 alt="Risk Management Calculator" 
                 class="w-full h-full object-contain object-top md:object-left drop-shadow-2xl opacity-100"
                 loading="lazy"
