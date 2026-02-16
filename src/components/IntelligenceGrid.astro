@@ -1,6 +1,7 @@
 ---
-// COMPONENT: IntelligenceGrid (Surgical Fix v5.2)
-// FIX: Anchored shots to Center-Bottom; Vertical-only hover lift.
+// COMPONENT: IntelligenceGrid (Surgical Fix v6.0 - The Stage Anchor)
+// PROTOCOL: All images anchored via 'absolute inset-0 + flex-items-end + justify-center'.
+// RESULT: True Center-Bottom alignment for Flagship, Grid Cards, and Risk Hub.
 ---
 
 <section id="features" class="py-24 md:py-32 bg-[#050505] relative overflow-hidden">
@@ -31,14 +32,15 @@
            </p>
         </div>
         
-        <div class="absolute inset-x-0 bottom-6 flex justify-center md:bottom-0 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[85%] md:h-[85%] z-10 animate-float md:animate-none">
+        <div class="absolute inset-0 flex items-end justify-center z-10 pointer-events-none overflow-hidden">
            <img 
              src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
              alt="Daily Market Intelligence Report" 
-             class="h-[180px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none 
-                    object-contain object-bottom drop-shadow-2xl transition-all duration-700 ease-out transform 
-                    translate-y-0 md:translate-y-[40%] md:group-hover:translate-y-[5%] 
-                    scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-3" 
+             class="w-[85%] md:w-[80%] h-auto max-h-[85%] object-contain object-bottom drop-shadow-2xl 
+                    transition-transform duration-700 ease-out transform 
+                    translate-y-[20%] md:translate-y-[40%] 
+                    group-hover:translate-y-[5%] md:group-hover:translate-y-[5%] 
+                    scale-100 md:group-hover:scale-105" 
              loading="eager" 
            />
         </div>
@@ -53,7 +55,7 @@
            <p class="text-slate-400 text-sm leading-relaxed">Visualize liquidity overlap zones.</p>
         </div>
         
-        <div class="relative flex-grow w-full flex items-end justify-center z-10 mt-4 md:-mb-12 overflow-visible animate-float md:animate-none pb-8 md:pb-0">
+        <div class="relative flex-grow w-full flex items-end justify-center z-10 mt-4 md:-mb-12 overflow-visible pb-8 md:pb-0">
             <div class="w-[90%] md:w-[150%] h-[90%] md:h-[110%] flex justify-center md:block">
                <img 
                  src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_session_clock.png" 
@@ -78,14 +80,15 @@
             <p class="text-slate-500 text-xs md:text-sm leading-relaxed group-hover:text-slate-400">{item.d}</p>
           </div>
           
-          <div class="absolute inset-x-0 bottom-6 flex justify-center md:bottom-0 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[90%] md:h-[65%] z-10 animate-float md:animate-none">
+          <div class="absolute inset-0 flex items-end justify-center z-10 pointer-events-none overflow-hidden">
              <img 
                src={item.img} 
                alt={item.alt} 
-               class="h-[150px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none 
-                      object-contain object-top drop-shadow-xl transition-all duration-500 ease-out transform 
-                      translate-y-0 md:translate-y-[45%] md:group-hover:translate-y-[10%] 
-                      scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
+               class="w-[85%] md:w-[90%] h-auto max-h-[70%] object-contain object-top drop-shadow-xl 
+                      transition-transform duration-500 ease-out transform 
+                      translate-y-[25%] md:translate-y-[45%] 
+                      group-hover:translate-y-[5%] md:group-hover:translate-y-[10%] 
+                      scale-100 md:group-hover:scale-105 origin-bottom" 
                loading="lazy" 
              />
           </div>
@@ -97,15 +100,15 @@
          
          <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent z-10 pointer-events-none"></div>
          
-         <div class="absolute inset-x-0 bottom-6 flex justify-center md:bottom-auto md:inset-x-auto md:top-1/2 md:right-0 md:-translate-y-1/2 md:translate-x-0 md:w-[50%] md:h-[90%] z-0 animate-float md:animate-none">
+         <div class="absolute inset-0 flex items-end justify-center z-0 pointer-events-none overflow-hidden">
              <img 
                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.png" 
                alt="Risk Management Calculator" 
-               class="h-[180px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none 
-                      object-contain object-center md:object-right drop-shadow-2xl opacity-100 brightness-110 
-                      transition-all duration-700 ease-out transform 
-                      translate-x-0 md:translate-x-[15%] md:group-hover:translate-x-[0%]
-                      rotate-0 md:rotate-y-6 md:rotate-x-3" 
+               class="w-[80%] md:w-[50%] h-auto max-h-[90%] object-contain object-bottom drop-shadow-2xl opacity-80 md:opacity-100
+                      transition-transform duration-700 ease-out transform 
+                      translate-y-[20%] md:translate-y-[40%] 
+                      group-hover:translate-y-[5%] 
+                      scale-100 md:group-hover:scale-105" 
                loading="lazy" 
              />
          </div>
@@ -128,17 +131,4 @@
 
 <style>
   .perspective-1000 { perspective: 1000px; }
-  .rotate-y-6 { transform: rotateY(6deg); }
-  .rotate-y-12 { transform: rotateY(12deg); }
-  .-rotate-y-12 { transform: rotateY(-12deg); }
-  .rotate-x-3 { transform: rotateX(3deg); }
-  .rotate-x-6 { transform: rotateX(6deg); }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-  }
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
 </style>
