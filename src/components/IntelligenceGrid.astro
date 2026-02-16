@@ -1,7 +1,7 @@
 ---
-// COMPONENT: IntelligenceGrid (Surgical Fix v6.0 - The Stage Anchor)
-// PROTOCOL: All images anchored via 'absolute inset-0 + flex-items-end + justify-center'.
-// RESULT: True Center-Bottom alignment for Flagship, Grid Cards, and Risk Hub.
+// COMPONENT: IntelligenceGrid (Mobile: Center-Float // Desktop: Stage-Anchor)
+// FIX: Removed all base 'translate-y' offsets to prevent Mobile "sneak peek".
+// MOBILE STATUS: Images are strictly centered with a gentle float.
 ---
 
 <section id="features" class="py-24 md:py-32 bg-[#050505] relative overflow-hidden">
@@ -32,15 +32,18 @@
            </p>
         </div>
         
-        <div class="absolute inset-0 flex items-end justify-center z-10 pointer-events-none overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center md:block md:inset-auto md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:w-full md:h-full z-10 pointer-events-none overflow-hidden">
            <img 
              src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
              alt="Daily Market Intelligence Report" 
-             class="w-[85%] md:w-[80%] h-auto max-h-[85%] object-contain object-bottom drop-shadow-2xl 
-                    transition-transform duration-700 ease-out transform 
-                    translate-y-[20%] md:translate-y-[40%] 
-                    group-hover:translate-y-[5%] md:group-hover:translate-y-[5%] 
-                    scale-100 md:group-hover:scale-105" 
+             class="
+                /* MOBILE: Dead Center + Float ONLY */
+                w-[85%] h-auto animate-float translate-y-0
+                /* DESKTOP: Bottom Anchor + Lift Interaction */
+                md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:w-[80%] md:animate-none
+                md:translate-y-[40%] md:group-hover:translate-y-[5%] 
+                transition-transform duration-700 ease-out 
+                object-contain drop-shadow-2xl" 
              loading="eager" 
            />
         </div>
@@ -55,12 +58,12 @@
            <p class="text-slate-400 text-sm leading-relaxed">Visualize liquidity overlap zones.</p>
         </div>
         
-        <div class="relative flex-grow w-full flex items-end justify-center z-10 mt-4 md:-mb-12 overflow-visible pb-8 md:pb-0">
+        <div class="relative flex-grow w-full flex items-center justify-center md:items-end z-10 mt-4 md:-mb-12 overflow-visible pb-8 md:pb-0">
             <div class="w-[90%] md:w-[150%] h-[90%] md:h-[110%] flex justify-center md:block">
                <img 
                  src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_session_clock.png" 
                  alt="Global Session Clock Interface" 
-                 class="h-[200px] w-auto md:w-full md:h-full object-contain drop-shadow-2xl transition-all duration-700 ease-out transform group-hover:scale-100 md:group-hover:scale-105 md:group-hover:-translate-y-6 rotate-0 md:-rotate-y-12 md:rotate-x-3 origin-bottom" 
+                 class="h-[200px] w-auto animate-float md:animate-none md:w-full md:h-full object-contain drop-shadow-2xl transition-all duration-700 ease-out transform group-hover:scale-100 md:group-hover:scale-105 md:group-hover:-translate-y-6 rotate-0 md:-rotate-y-12 md:rotate-x-3 origin-bottom" 
                  loading="eager" 
                />
             </div>
@@ -80,15 +83,18 @@
             <p class="text-slate-500 text-xs md:text-sm leading-relaxed group-hover:text-slate-400">{item.d}</p>
           </div>
           
-          <div class="absolute inset-0 flex items-end justify-center z-10 pointer-events-none overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center md:block md:inset-auto md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:w-full md:h-full z-10 pointer-events-none overflow-hidden">
              <img 
                src={item.img} 
                alt={item.alt} 
-               class="w-[85%] md:w-[90%] h-auto max-h-[70%] object-contain object-top drop-shadow-xl 
-                      transition-transform duration-500 ease-out transform 
-                      translate-y-[25%] md:translate-y-[45%] 
-                      group-hover:translate-y-[5%] md:group-hover:translate-y-[10%] 
-                      scale-100 md:group-hover:scale-105 origin-bottom" 
+               class="
+                  /* MOBILE: Dead Center + Float ONLY */
+                  w-[85%] h-auto animate-float translate-y-0
+                  /* DESKTOP: Bottom Anchor + Lift */
+                  md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:w-[90%] md:animate-none
+                  md:translate-y-[45%] md:group-hover:translate-y-[10%] 
+                  transition-transform duration-500 ease-out 
+                  object-contain drop-shadow-xl origin-bottom" 
                loading="lazy" 
              />
           </div>
@@ -100,15 +106,18 @@
          
          <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent z-10 pointer-events-none"></div>
          
-         <div class="absolute inset-0 flex items-end justify-center z-0 pointer-events-none overflow-hidden">
+         <div class="absolute inset-0 flex items-center justify-center md:block md:inset-auto md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:w-full md:h-full z-0 pointer-events-none overflow-hidden">
              <img 
                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.png" 
                alt="Risk Management Calculator" 
-               class="w-[80%] md:w-[50%] h-auto max-h-[90%] object-contain object-bottom drop-shadow-2xl opacity-80 md:opacity-100
-                      transition-transform duration-700 ease-out transform 
-                      translate-y-[20%] md:translate-y-[40%] 
-                      group-hover:translate-y-[5%] 
-                      scale-100 md:group-hover:scale-105" 
+               class="
+                  /* MOBILE: Dead Center + Float ONLY */
+                  w-[85%] h-auto animate-float translate-y-0
+                  /* DESKTOP: Anchored & Lift */
+                  md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:w-[60%] md:animate-none
+                  md:translate-y-[40%] md:group-hover:translate-y-[5%] 
+                  transition-transform duration-700 ease-out 
+                  object-contain drop-shadow-2xl opacity-80 md:opacity-100" 
                loading="lazy" 
              />
          </div>
@@ -131,4 +140,13 @@
 
 <style>
   .perspective-1000 { perspective: 1000px; }
+  
+  /* Standard Floating Animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
 </style>
