@@ -1,17 +1,11 @@
 ---
-// COMPONENT: IntelligenceGrid (The Sovereign Desk - Center-Lift Final)
+// COMPONENT: IntelligenceGrid (The Sovereign Desk - Final Production v5)
 // STATUS: DEPLOY READY
 // FIXES:
-// 1. Desktop: "Center-Lift" Strategy Applied. Images sit center-bottom and lift straight up on hover.
-// 2. Mobile Risk Console: Added 'pb-32' to text to prevent overlap with image.
+// 1. Desktop: Wrapper locks to Center-Bottom. Image lifts vertically ONLY. (Fixes centering & hover).
+// 2. Mobile Risk Hub: Added 'pb-40' to text container to prevent overlap.
 // 3. Asset: Knowledge Hub fixed to .png.
-// ASSETS: v2.5 Hybrid Product Shots (Linked)---
-// COMPONENT: IntelligenceGrid (The Sovereign Desk - Center-Lift Final)
-// STATUS: DEPLOY READY
-// FIXES:
-// 1. Desktop: "Center-Lift" Strategy Applied. Images sit center-bottom and lift straight up on hover.
-// 2. Mobile Risk Console: Added 'pb-32' to text to prevent overlap with image.
-// 3. Asset: Knowledge Hub fixed to .png.
+// 4. Mobile Animation: Restored 'animate-float'.
 // ASSETS: v2.5 Hybrid Product Shots (Linked)
 ---
 
@@ -43,11 +37,11 @@
            </p>
         </div>
         
-        <div class="absolute inset-x-0 bottom-0 h-[60%] flex items-end justify-end pb-6 pr-6 md:pb-0 md:pr-0 md:block md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[75%] md:h-[80%] z-10 animate-float md:animate-none">
+        <div class="absolute inset-x-0 bottom-6 flex justify-center md:bottom-0 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[75%] md:h-[80%] z-10 animate-float md:animate-none">
            <img 
              src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
              alt="Daily Market Intelligence Report" 
-             class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl md:w-full md:h-full md:object-bottom md:max-w-none transition-all duration-700 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-[-10%] scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
+             class="h-[180px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none object-contain object-bottom drop-shadow-2xl transition-all duration-700 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-[-10%] scale-100 md:group-hover:scale-105 rotate-0 md:rotate-y-6 md:rotate-x-3" 
              loading="eager" 
            />
         </div>
@@ -63,11 +57,11 @@
         </div>
         
         <div class="relative flex-grow w-full flex items-end justify-center z-10 mt-4 md:-mb-12 overflow-visible animate-float md:animate-none pb-8 md:pb-0">
-            <div class="w-[90%] md:w-[150%] h-[90%] md:h-[110%] flex items-end justify-center md:block">
+            <div class="w-[90%] md:w-[150%] h-[90%] md:h-[110%] flex justify-center md:block">
                <img 
                  src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_session_clock.png" 
                  alt="Global Session Clock Interface" 
-                 class="w-auto h-full object-contain drop-shadow-2xl md:w-full md:object-center transition-all duration-700 ease-out transform group-hover:scale-100 md:group-hover:scale-105 md:group-hover:-translate-y-8 rotate-0 md:-rotate-y-12 md:rotate-x-3 origin-bottom" 
+                 class="h-[200px] w-auto md:w-full md:h-full object-contain drop-shadow-2xl transition-all duration-700 ease-out transform group-hover:scale-100 md:group-hover:scale-105 md:group-hover:-translate-y-6 rotate-0 md:-rotate-y-12 md:rotate-x-3 origin-bottom" 
                  loading="eager" 
                />
             </div>
@@ -87,11 +81,11 @@
             <p class="text-slate-500 text-xs md:text-sm leading-relaxed group-hover:text-slate-400">{item.d}</p>
           </div>
           
-          <div class="absolute inset-x-0 bottom-0 h-[60%] flex items-end justify-center pb-6 md:pb-0 md:block md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[90%] md:h-[65%] z-10 animate-float md:animate-none">
+          <div class="absolute inset-x-0 bottom-6 flex justify-center md:bottom-0 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[90%] md:h-[65%] z-10 animate-float md:animate-none">
              <img 
                src={item.img} 
                alt={item.alt} 
-               class="w-auto h-full max-w-[90%] object-contain drop-shadow-xl md:w-full md:h-full md:object-top md:max-w-none transition-all duration-500 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-[-10%] scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
+               class="h-[150px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none object-contain object-top drop-shadow-xl transition-all duration-500 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-[-10%] scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
                loading="lazy" 
              />
           </div>
@@ -103,147 +97,16 @@
          
          <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent z-10 pointer-events-none"></div>
          
-         <div class="absolute inset-x-0 bottom-0 h-[60%] flex items-end justify-center pb-6 md:pb-0 md:block md:inset-x-auto md:top-1/2 md:bottom-auto md:left-auto md:right-0 md:-translate-y-1/2 md:translate-x-8 md:w-[60%] md:h-[120%] z-0 animate-float md:animate-none">
+         <div class="absolute inset-x-0 bottom-6 flex justify-center md:bottom-auto md:inset-x-auto md:top-1/2 md:left-auto md:right-0 md:-translate-y-1/2 md:translate-x-8 md:w-[60%] md:h-[120%] z-0 animate-float md:animate-none">
              <img 
                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.png" 
                alt="Risk Management Calculator" 
-               class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl opacity-100 brightness-110 md:w-full md:h-full md:object-left md:max-w-none transition-all duration-700 ease-out transform translate-x-0 md:translate-x-0 group-hover:scale-100 md:group-hover:scale-105 md:group-hover:translate-x-[-2rem] md:group-hover:rotate-y-0 md:group-hover:rotate-x-0 rotate-0 md:rotate-y-12 md:rotate-x-6" 
+               class="h-[180px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none object-contain object-top md:object-left drop-shadow-2xl opacity-100 brightness-110 transition-all duration-700 ease-out transform translate-x-0 md:group-hover:scale-105 md:group-hover:translate-x-[-2rem] md:group-hover:rotate-y-0 md:group-hover:rotate-x-0 rotate-0 md:rotate-y-12 md:rotate-x-6" 
                loading="lazy" 
              />
          </div>
          
-         <div class="relative z-20 p-8 pb-32 md:pb-10 md:p-10 w-full md:w-1/2 text-center md:text-left">
-            <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
-               <div class="p-2 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-500">
-                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-               </div>
-               <h3 class="text-xl md:text-2xl font-bold text-white">Risk Management Console</h3>
-            </div>
-            <p class="text-slate-400 text-sm md:text-base mb-6 max-w-sm mx-auto md:mx-0">The professional's edge. Integrated calculator suite for Margin, Pip Value, R:R, and Position Sizing.</p>
-            <span class="inline-flex items-center text-sm font-bold text-gold-400 group-hover:text-gold-300 transition-colors">Access Calculator <span class="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span></span>
-         </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<style>
-  .perspective-1000 { perspective: 1000px; }
-  .rotate-y-6 { transform: rotateY(6deg); }
-  .rotate-y-12 { transform: rotateY(12deg); }
-  .-rotate-y-12 { transform: rotateY(-12deg); }
-  .rotate-x-3 { transform: rotateX(3deg); }
-  .rotate-x-6 { transform: rotateX(6deg); }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-  }
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-</style>
----
-
-<section id="features" class="py-24 md:py-32 bg-[#050505] relative overflow-hidden">
-  <div class="absolute inset-0 bg-[#050505]"></div>
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[300px] md:h-[500px] bg-gold-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none"></div>
-
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    
-    <div class="text-center mb-16 md:mb-24">
-      <h2 class="text-3xl md:text-5xl font-serif font-bold text-slate-100 mb-4 md:mb-6">
-        Intelligence <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#F0D788] to-[#DDAA33]">Modules</span>
-      </h2>
-      <p class="text-slate-400 max-w-2xl mx-auto text-base md:text-lg px-4">
-        Institutional-grade tools designed for total market awareness. No fluff. Just data.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[minmax(280px,auto)]">
-      
-      <a href="/features#market-brief" class="md:col-span-2 relative group rounded-3xl bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col min-h-[360px] md:min-h-[400px] transition-all duration-500 hover:border-gold-500/30 hover:shadow-[0_0_30px_-10px_rgba(221,170,51,0.1)] perspective-1000">
-        <div class="relative z-20 p-6 md:p-8">
-           <div class="flex items-center gap-3 mb-2">
-             <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold-500/10 text-gold-400 border border-gold-500/20 uppercase tracking-wider">Flagship</span>
-             <h3 class="text-xl md:text-2xl font-bold text-white">Daily Market Intelligence</h3>
-           </div>
-           <p class="text-slate-400 text-sm max-w-sm md:max-w-md group-hover:text-slate-300 transition-colors">
-             Institutional daily bias & volatility matrix delivered before London Open.
-           </p>
-        </div>
-        
-        <div class="absolute inset-x-0 bottom-0 h-[60%] flex items-end justify-end pb-6 pr-6 md:pb-0 md:pr-0 md:block md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[75%] md:h-[80%] z-10 animate-float md:animate-none">
-           <img 
-             src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
-             alt="Daily Market Intelligence Report" 
-             class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl md:w-full md:h-full md:object-bottom md:max-w-none transition-all duration-700 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-[-10%] scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
-             loading="eager" 
-           />
-        </div>
-      </a>
-
-      <a href="/features#session-clock" class="md:row-span-3 relative group rounded-3xl bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col min-h-[500px] md:min-h-auto transition-all duration-500 hover:border-gold-500/30 hover:shadow-[0_0_30px_-10px_rgba(221,170,51,0.1)] perspective-1000">
-        <div class="relative z-20 p-6 md:p-8 pb-0">
-           <div class="flex justify-between items-start mb-2">
-             <h3 class="text-xl md:text-2xl font-bold text-white">Session Clock</h3>
-             <span class="text-[10px] font-mono text-gold-500 tracking-widest bg-black/50 px-2 py-1 rounded border border-gold-500/20 backdrop-blur-sm animate-pulse">LIVE</span>
-           </div>
-           <p class="text-slate-400 text-sm leading-relaxed">Visualize liquidity overlap zones.</p>
-        </div>
-        
-        <div class="relative flex-grow w-full flex items-end justify-center z-10 mt-4 md:-mb-12 overflow-visible animate-float md:animate-none pb-8 md:pb-0">
-            <div class="w-[90%] md:w-[150%] h-[90%] md:h-[110%] flex items-end justify-center md:block">
-               <img 
-                 src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_session_clock.png" 
-                 alt="Global Session Clock Interface" 
-                 class="w-auto h-full object-contain drop-shadow-2xl md:w-full md:object-center transition-all duration-700 ease-out transform group-hover:scale-100 md:group-hover:scale-105 md:group-hover:-translate-y-8 rotate-0 md:-rotate-y-12 md:rotate-x-3 origin-bottom" 
-                 loading="eager" 
-               />
-            </div>
-        </div>
-        <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0A0A0A] to-transparent z-20 pointer-events-none"></div>
-      </a>
-
-      {[
-        { t: "24/7 News Room", d: "Live feed aggregator. Filter noise.", link: "#news", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_news_room.png", alt: "Real-time News Aggregator Dashboard" },
-        { t: "Analysis Hub", d: "Economic Calendar & Advanced Charts.", link: "#analysis", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_chart.png", alt: "Advanced Charting and Analysis Suite" },
-        { t: "Trade Journal", d: "Track performance & equity curve.", link: "#journal", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_journal.png", alt: "Visual Trading Journal and Equity Curve" },
-        { t: "Knowledge Hub", d: "Premium E-books & frameworks.", link: "#library", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_ebook_hub.png", alt: "Educational Library and E-Books" }
-      ].map((item) => (
-        <a href={`/features${item.link}`} class="relative group rounded-3xl bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col min-h-[300px] md:min-h-[280px] transition-all duration-500 hover:border-gold-500/30 hover:shadow-[0_0_30px_-10px_rgba(221,170,51,0.1)] perspective-1000">
-          <div class="relative z-20 p-6">
-            <h3 class="text-lg md:text-xl font-bold text-slate-200 mb-1 group-hover:text-white transition-colors">{item.t}</h3>
-            <p class="text-slate-500 text-xs md:text-sm leading-relaxed group-hover:text-slate-400">{item.d}</p>
-          </div>
-          
-          <div class="absolute inset-x-0 bottom-0 h-[60%] flex items-end justify-center pb-6 md:pb-0 md:block md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[90%] md:h-[65%] z-10 animate-float md:animate-none">
-             <img 
-               src={item.img} 
-               alt={item.alt} 
-               class="w-auto h-full max-w-[90%] object-contain drop-shadow-xl md:w-full md:h-full md:object-top md:max-w-none transition-all duration-500 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-[-10%] scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
-               loading="lazy" 
-             />
-          </div>
-          <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A0A0A] to-transparent z-20 pointer-events-none"></div>
-        </a>
-      ))}
-
-      <a href="/features#risk-hub" class="md:col-span-3 relative group rounded-3xl bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col md:flex-row items-center min-h-[400px] md:min-h-[280px] transition-all duration-500 hover:border-gold-500/30 hover:shadow-[0_0_30px_-10px_rgba(221,170,51,0.1)] perspective-1000">
-         
-         <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent z-10 pointer-events-none"></div>
-         
-         <div class="absolute inset-x-0 bottom-0 h-[60%] flex items-end justify-center pb-6 md:pb-0 md:block md:inset-x-auto md:top-1/2 md:bottom-auto md:left-auto md:right-0 md:-translate-y-1/2 md:translate-x-8 md:w-[60%] md:h-[120%] z-0 animate-float md:animate-none">
-             <img 
-               src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.png" 
-               alt="Risk Management Calculator" 
-               class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl opacity-100 brightness-110 md:w-full md:h-full md:object-left md:max-w-none transition-all duration-700 ease-out transform translate-x-0 md:translate-x-0 group-hover:scale-100 md:group-hover:scale-105 md:group-hover:translate-x-[-2rem] md:group-hover:rotate-y-0 md:group-hover:rotate-x-0 rotate-0 md:rotate-y-12 md:rotate-x-6" 
-               loading="lazy" 
-             />
-         </div>
-         
-         <div class="relative z-20 p-8 pb-32 md:pb-10 md:p-10 w-full md:w-1/2 text-center md:text-left">
+         <div class="relative z-20 p-8 pb-40 md:pb-10 md:p-10 w-full md:w-1/2 text-center md:text-left">
             <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
                <div class="p-2 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-500">
                   <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
