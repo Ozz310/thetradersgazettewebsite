@@ -1,10 +1,10 @@
 ---
-// COMPONENT: IntelligenceGrid (The Sovereign Desk - Final Boundary Fix v2)
+// COMPONENT: IntelligenceGrid (The Sovereign Desk - Final Calibration v3)
 // STATUS: DEPLOY READY
 // FIXES:
-// 1. Desktop: RESTORED "Peek" effect (Image visible 40% by default, 100% on hover).
-// 2. Mobile: Images lifted (`bottom-6`) and constrained (`w-[85%]`) to prevent corner clipping.
-// 3. Risk Hub: Centered and resized.
+// 1. Desktop Hover: Now transitions from "70% Visible" (Default) to "100% Centered" (Hover).
+// 2. Mobile: Strict height/width constraints applied. Images are forced inside the safe zone.
+// 3. Risk Hub: Centered and scaled for mobile.
 // ASSETS: v2.5 Hybrid Product Shots (Linked)
 ---
 
@@ -35,11 +35,12 @@
              Institutional daily bias & volatility matrix delivered before London Open.
            </p>
         </div>
-        <div class="absolute bottom-6 right-0 md:bottom-0 w-[90%] md:w-[75%] h-[60%] md:h-[80%] z-10 animate-float md:animate-none flex items-end justify-end">
+        
+        <div class="absolute bottom-6 right-0 md:bottom-0 w-[90%] md:w-[75%] h-[180px] md:h-[80%] z-10 animate-float md:animate-none flex items-end justify-end">
            <img 
              src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
              alt="Daily Market Intelligence Report" 
-             class="w-full h-full object-contain object-bottom drop-shadow-2xl transition-all duration-700 ease-out transform translate-x-0 translate-y-0 md:translate-x-8 md:translate-y-4 group-hover:translate-x-2 md:group-hover:translate-y-0 group-hover:scale-100 md:group-hover:scale-105 rotate-0 md:rotate-y-6 md:rotate-x-3" 
+             class="w-full h-full object-contain object-bottom drop-shadow-2xl transition-all duration-700 ease-out transform translate-x-0 translate-y-0 md:translate-x-8 md:translate-y-[30%] group-hover:translate-x-2 md:group-hover:translate-y-[-5%] group-hover:scale-100 md:group-hover:scale-105 rotate-0 md:rotate-y-6 md:rotate-x-3" 
              loading="eager" 
            />
         </div>
@@ -77,11 +78,12 @@
             <h3 class="text-lg md:text-xl font-bold text-slate-200 mb-1 group-hover:text-white transition-colors">{item.t}</h3>
             <p class="text-slate-500 text-xs md:text-sm leading-relaxed group-hover:text-slate-400">{item.d}</p>
           </div>
-          <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] md:w-[90%] h-[60%] md:h-[65%] z-10 animate-float md:animate-none">
+          
+          <div class="absolute bottom-6 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:bottom-0 w-[90%] md:w-[90%] h-[150px] md:h-[65%] z-10 animate-float md:animate-none">
              <img 
                src={item.img} 
                alt={item.alt} 
-               class="w-full h-full object-contain object-top drop-shadow-xl transition-all duration-500 ease-out transform translate-y-0 md:translate-y-12 md:group-hover:translate-y-0 scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
+               class="w-full h-full object-contain object-top drop-shadow-xl transition-all duration-500 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-[-10%] scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
                loading="lazy" 
              />
           </div>
@@ -93,7 +95,7 @@
          
          <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent z-10 pointer-events-none"></div>
          
-         <div class="absolute bottom-0 md:top-1/2 md:bottom-auto left-1/2 md:left-auto md:right-0 md:-translate-y-1/2 -translate-x-1/2 md:translate-x-8 w-[85%] md:w-[60%] h-[50%] md:h-[120%] z-0 animate-float md:animate-none">
+         <div class="absolute bottom-6 md:top-1/2 md:bottom-auto left-1/2 md:left-auto md:right-0 md:-translate-y-1/2 -translate-x-1/2 md:translate-x-8 w-[90%] md:w-[60%] h-[180px] md:h-[120%] z-0 animate-float md:animate-none">
              <img 
                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.png" 
                alt="Risk Management Calculator" 
