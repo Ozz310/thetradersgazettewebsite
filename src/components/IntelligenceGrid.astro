@@ -1,10 +1,10 @@
 ---
-// COMPONENT: IntelligenceGrid (The Sovereign Desk - Diagonal Slide Final)
+// COMPONENT: IntelligenceGrid (The Sovereign Desk - Center-Lift Final)
 // STATUS: DEPLOY READY
 // FIXES:
-// 1. Desktop Hover: Now slides DIAGONALLY (Up + Left) to center the image fully in the card.
-// 2. Mobile: Remains locked, centered, and floating.
-// 3. Assets: Links verified.
+// 1. Desktop: "Center-Lift" Strategy Applied. Images sit center-bottom and lift straight up on hover.
+// 2. Mobile Risk Console: Added 'pb-32' to text to prevent overlap with image.
+// 3. Asset: Knowledge Hub fixed to .png.
 // ASSETS: v2.5 Hybrid Product Shots (Linked)
 ---
 
@@ -36,11 +36,11 @@
            </p>
         </div>
         
-        <div class="absolute inset-x-0 bottom-0 h-[60%] flex items-end justify-end pb-6 pr-6 md:pb-0 md:pr-0 md:block md:inset-x-auto md:right-0 md:bottom-0 md:w-[75%] md:h-[80%] z-10 animate-float md:animate-none">
+        <div class="absolute inset-x-0 bottom-0 h-[60%] flex items-end justify-end pb-6 pr-6 md:pb-0 md:pr-0 md:block md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[75%] md:h-[80%] z-10 animate-float md:animate-none">
            <img 
              src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
              alt="Daily Market Intelligence Report" 
-             class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl md:w-full md:h-full md:object-bottom md:max-w-none transition-all duration-700 ease-out transform translate-y-0 md:translate-x-8 md:translate-y-[30%] md:group-hover:-translate-x-6 md:group-hover:-translate-y-6 group-hover:scale-100 md:group-hover:scale-105 rotate-0 md:rotate-y-6 md:rotate-x-3" 
+             class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl md:w-full md:h-full md:object-bottom md:max-w-none transition-all duration-700 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-[-10%] scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
              loading="eager" 
            />
         </div>
@@ -72,7 +72,7 @@
         { t: "24/7 News Room", d: "Live feed aggregator. Filter noise.", link: "#news", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_news_room.png", alt: "Real-time News Aggregator Dashboard" },
         { t: "Analysis Hub", d: "Economic Calendar & Advanced Charts.", link: "#analysis", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_chart.png", alt: "Advanced Charting and Analysis Suite" },
         { t: "Trade Journal", d: "Track performance & equity curve.", link: "#journal", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_journal.png", alt: "Visual Trading Journal and Equity Curve" },
-        { t: "Knowledge Hub", d: "Premium E-books & frameworks.", link: "#library", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_ebook_hub.jpg", alt: "Educational Library and E-Books" }
+        { t: "Knowledge Hub", d: "Premium E-books & frameworks.", link: "#library", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_ebook_hub.png", alt: "Educational Library and E-Books" }
       ].map((item) => (
         <a href={`/features${item.link}`} class="relative group rounded-3xl bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col min-h-[300px] md:min-h-[280px] transition-all duration-500 hover:border-gold-500/30 hover:shadow-[0_0_30px_-10px_rgba(221,170,51,0.1)] perspective-1000">
           <div class="relative z-20 p-6">
@@ -84,7 +84,7 @@
              <img 
                src={item.img} 
                alt={item.alt} 
-               class="w-auto h-full max-w-[90%] object-contain drop-shadow-xl md:w-full md:h-full md:object-top md:max-w-none transition-all duration-500 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:-translate-y-12 md:group-hover:-translate-x-4 scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
+               class="w-auto h-full max-w-[90%] object-contain drop-shadow-xl md:w-full md:h-full md:object-top md:max-w-none transition-all duration-500 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-[-10%] scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
                loading="lazy" 
              />
           </div>
@@ -100,12 +100,12 @@
              <img 
                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.png" 
                alt="Risk Management Calculator" 
-               class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl opacity-100 brightness-110 md:w-full md:h-full md:object-left md:max-w-none transition-all duration-700 ease-out transform translate-x-0 md:translate-x-0 group-hover:scale-100 md:group-hover:scale-105 md:group-hover:-translate-x-12 md:group-hover:rotate-y-0 md:group-hover:rotate-x-0 rotate-0 md:rotate-y-12 md:rotate-x-6" 
+               class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl opacity-100 brightness-110 md:w-full md:h-full md:object-left md:max-w-none transition-all duration-700 ease-out transform translate-x-0 md:translate-x-0 group-hover:scale-100 md:group-hover:scale-105 md:group-hover:translate-x-[-2rem] md:group-hover:rotate-y-0 md:group-hover:rotate-x-0 rotate-0 md:rotate-y-12 md:rotate-x-6" 
                loading="lazy" 
              />
          </div>
          
-         <div class="relative z-20 p-8 md:p-10 w-full md:w-1/2 text-center md:text-left">
+         <div class="relative z-20 p-8 pb-32 md:pb-10 md:p-10 w-full md:w-1/2 text-center md:text-left">
             <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
                <div class="p-2 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-500">
                   <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
