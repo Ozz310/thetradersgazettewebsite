@@ -1,11 +1,10 @@
 ---
-// COMPONENT: IntelligenceGrid (The Sovereign Desk - Final Robust Fix)
+// COMPONENT: IntelligenceGrid (The Sovereign Desk - Diagonal Slide Fix)
 // STATUS: DEPLOY READY
 // FIXES:
-// 1. Desktop Hover: RESTORED. Image sits low (30% hidden) and slides up (0%) on hover.
-// 2. Mobile Center: RESTORED via Flexbox. No drifting.
-// 3. Mobile Animation: RESTORED via 'animate-float' on the wrapper (no conflict with desktop hover).
-// 4. Assets: Fixed .jpg -> .png extensions for Knowledge Hub & News Room.
+// 1. Desktop Hover: Now slides DIAGONALLY (Up + Left) to center the image fully in the card.
+// 2. Mobile: Remains locked, centered, and floating via Flexbox.
+// 3. Assets: Links verified.
 // ASSETS: v2.5 Hybrid Product Shots (Linked)
 ---
 
@@ -41,7 +40,7 @@
            <img 
              src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
              alt="Daily Market Intelligence Report" 
-             class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl md:w-full md:h-full md:object-bottom md:max-w-none transition-all duration-700 ease-out transform translate-y-0 md:translate-x-8 md:translate-y-[30%] group-hover:translate-x-2 md:group-hover:translate-y-0 group-hover:scale-100 md:group-hover:scale-105 rotate-0 md:rotate-y-6 md:rotate-x-3" 
+             class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl md:w-full md:h-full md:object-bottom md:max-w-none transition-all duration-700 ease-out transform translate-y-0 md:translate-x-8 md:translate-y-[30%] md:group-hover:-translate-x-6 md:group-hover:-translate-y-6 group-hover:scale-100 md:group-hover:scale-105 rotate-0 md:rotate-y-6 md:rotate-x-3" 
              loading="eager" 
            />
         </div>
@@ -61,7 +60,7 @@
                <img 
                  src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_session_clock.png" 
                  alt="Global Session Clock Interface" 
-                 class="w-auto h-full object-contain drop-shadow-2xl md:w-full md:object-center transition-all duration-700 ease-out transform group-hover:scale-100 md:group-hover:scale-105 md:group-hover:-translate-y-6 rotate-0 md:-rotate-y-12 md:rotate-x-3 origin-bottom" 
+                 class="w-auto h-full object-contain drop-shadow-2xl md:w-full md:object-center transition-all duration-700 ease-out transform group-hover:scale-100 md:group-hover:scale-105 md:group-hover:-translate-y-8 rotate-0 md:-rotate-y-12 md:rotate-x-3 origin-bottom" 
                  loading="eager" 
                />
             </div>
@@ -85,7 +84,7 @@
              <img 
                src={item.img} 
                alt={item.alt} 
-               class="w-auto h-full max-w-[90%] object-contain drop-shadow-xl md:w-full md:h-full md:object-top md:max-w-none transition-all duration-500 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-0 scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
+               class="w-auto h-full max-w-[90%] object-contain drop-shadow-xl md:w-full md:h-full md:object-top md:max-w-none transition-all duration-500 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:-translate-y-4 scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
                loading="lazy" 
              />
           </div>
@@ -101,7 +100,7 @@
              <img 
                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.png" 
                alt="Risk Management Calculator" 
-               class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl opacity-100 brightness-110 md:w-full md:h-full md:object-left md:max-w-none transition-all duration-700 ease-out transform translate-x-0 md:translate-x-0 group-hover:scale-100 md:group-hover:scale-105 md:group-hover:translate-x-[-2rem] md:group-hover:rotate-y-0 md:group-hover:rotate-x-0 rotate-0 md:rotate-y-12 md:rotate-x-6" 
+               class="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl opacity-100 brightness-110 md:w-full md:h-full md:object-left md:max-w-none transition-all duration-700 ease-out transform translate-x-0 md:translate-x-0 group-hover:scale-100 md:group-hover:scale-105 md:group-hover:-translate-x-12 md:group-hover:rotate-y-0 md:group-hover:rotate-x-0 rotate-0 md:rotate-y-12 md:rotate-x-6" 
                loading="lazy" 
              />
          </div>
