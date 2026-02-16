@@ -1,12 +1,6 @@
 ---
-// COMPONENT: IntelligenceGrid (The Sovereign Desk - Final Production v5)
-// STATUS: DEPLOY READY
-// FIXES:
-// 1. Desktop: Wrapper locks to Center-Bottom. Image lifts vertically ONLY. (Fixes centering & hover).
-// 2. Mobile Risk Hub: Added 'pb-40' to text container to prevent overlap.
-// 3. Asset: Knowledge Hub fixed to .png.
-// 4. Mobile Animation: Restored 'animate-float'.
-// ASSETS: v2.5 Hybrid Product Shots (Linked)
+// COMPONENT: IntelligenceGrid (Surgical Fix v5.2)
+// FIX: Anchored shots to Center-Bottom; Vertical-only hover lift.
 ---
 
 <section id="features" class="py-24 md:py-32 bg-[#050505] relative overflow-hidden">
@@ -37,11 +31,14 @@
            </p>
         </div>
         
-        <div class="absolute inset-x-0 bottom-6 flex justify-center md:bottom-0 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[75%] md:h-[80%] z-10 animate-float md:animate-none">
+        <div class="absolute inset-x-0 bottom-6 flex justify-center md:bottom-0 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[85%] md:h-[85%] z-10 animate-float md:animate-none">
            <img 
              src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
              alt="Daily Market Intelligence Report" 
-             class="h-[180px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none object-contain object-bottom drop-shadow-2xl transition-all duration-700 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-[-10%] scale-100 md:group-hover:scale-105 rotate-0 md:rotate-y-6 md:rotate-x-3" 
+             class="h-[180px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none 
+                    object-contain object-bottom drop-shadow-2xl transition-all duration-700 ease-out transform 
+                    translate-y-0 md:translate-y-[40%] md:group-hover:translate-y-[5%] 
+                    scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-3" 
              loading="eager" 
            />
         </div>
@@ -85,7 +82,10 @@
              <img 
                src={item.img} 
                alt={item.alt} 
-               class="h-[150px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none object-contain object-top drop-shadow-xl transition-all duration-500 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:translate-y-[-10%] scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
+               class="h-[150px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none 
+                      object-contain object-top drop-shadow-xl transition-all duration-500 ease-out transform 
+                      translate-y-0 md:translate-y-[45%] md:group-hover:translate-y-[10%] 
+                      scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
                loading="lazy" 
              />
           </div>
@@ -97,11 +97,15 @@
          
          <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent z-10 pointer-events-none"></div>
          
-         <div class="absolute inset-x-0 bottom-6 flex justify-center md:bottom-auto md:inset-x-auto md:top-1/2 md:left-auto md:right-0 md:-translate-y-1/2 md:translate-x-8 md:w-[60%] md:h-[120%] z-0 animate-float md:animate-none">
+         <div class="absolute inset-x-0 bottom-6 flex justify-center md:bottom-auto md:inset-x-auto md:top-1/2 md:right-0 md:-translate-y-1/2 md:translate-x-0 md:w-[50%] md:h-[90%] z-0 animate-float md:animate-none">
              <img 
                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.png" 
                alt="Risk Management Calculator" 
-               class="h-[180px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none object-contain object-top md:object-left drop-shadow-2xl opacity-100 brightness-110 transition-all duration-700 ease-out transform translate-x-0 md:group-hover:scale-105 md:group-hover:translate-x-[-2rem] md:group-hover:rotate-y-0 md:group-hover:rotate-x-0 rotate-0 md:rotate-y-12 md:rotate-x-6" 
+               class="h-[180px] w-auto max-w-[90%] md:w-full md:h-full md:max-w-none 
+                      object-contain object-center md:object-right drop-shadow-2xl opacity-100 brightness-110 
+                      transition-all duration-700 ease-out transform 
+                      translate-x-0 md:translate-x-[15%] md:group-hover:translate-x-[0%]
+                      rotate-0 md:rotate-y-6 md:rotate-x-3" 
                loading="lazy" 
              />
          </div>
