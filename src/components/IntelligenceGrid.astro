@@ -1,9 +1,9 @@
 ---
-// COMPONENT: IntelligenceGrid (The Sovereign Desk - Diagonal Slide Fix)
+// COMPONENT: IntelligenceGrid (The Sovereign Desk - Diagonal Slide Final)
 // STATUS: DEPLOY READY
 // FIXES:
 // 1. Desktop Hover: Now slides DIAGONALLY (Up + Left) to center the image fully in the card.
-// 2. Mobile: Remains locked, centered, and floating via Flexbox.
+// 2. Mobile: Remains locked, centered, and floating.
 // 3. Assets: Links verified.
 // ASSETS: v2.5 Hybrid Product Shots (Linked)
 ---
@@ -72,7 +72,7 @@
         { t: "24/7 News Room", d: "Live feed aggregator. Filter noise.", link: "#news", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_news_room.png", alt: "Real-time News Aggregator Dashboard" },
         { t: "Analysis Hub", d: "Economic Calendar & Advanced Charts.", link: "#analysis", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_chart.png", alt: "Advanced Charting and Analysis Suite" },
         { t: "Trade Journal", d: "Track performance & equity curve.", link: "#journal", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_journal.png", alt: "Visual Trading Journal and Equity Curve" },
-        { t: "Knowledge Hub", d: "Premium E-books & frameworks.", link: "#library", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_ebook_hub.png", alt: "Educational Library and E-Books" }
+        { t: "Knowledge Hub", d: "Premium E-books & frameworks.", link: "#library", img: "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_ebook_hub.jpg", alt: "Educational Library and E-Books" }
       ].map((item) => (
         <a href={`/features${item.link}`} class="relative group rounded-3xl bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col min-h-[300px] md:min-h-[280px] transition-all duration-500 hover:border-gold-500/30 hover:shadow-[0_0_30px_-10px_rgba(221,170,51,0.1)] perspective-1000">
           <div class="relative z-20 p-6">
@@ -84,7 +84,7 @@
              <img 
                src={item.img} 
                alt={item.alt} 
-               class="w-auto h-full max-w-[90%] object-contain drop-shadow-xl md:w-full md:h-full md:object-top md:max-w-none transition-all duration-500 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:-translate-y-4 scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
+               class="w-auto h-full max-w-[90%] object-contain drop-shadow-xl md:w-full md:h-full md:object-top md:max-w-none transition-all duration-500 ease-out transform translate-y-0 md:translate-y-[30%] md:group-hover:-translate-y-12 md:group-hover:-translate-x-4 scale-100 md:group-hover:scale-105 rotate-0 md:rotate-x-6 origin-bottom" 
                loading="lazy" 
              />
           </div>
