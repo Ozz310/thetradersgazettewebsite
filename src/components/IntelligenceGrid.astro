@@ -1,11 +1,11 @@
 ---
-// COMPONENT: IntelligenceGrid (The Sovereign Desk - Final Production v4)
+// COMPONENT: IntelligenceGrid (The Sovereign Desk - Mobile Centered)
 // STATUS: DEPLOY READY
 // FIXES: 
-// 1. "Physics Conflict" Resolved: Mobile Float is now on the container, Desktop Slide on the image.
-// 2. Risk Hub: Visibility boosted (Gradient reduced to 40%, Brightness 110%).
-// 3. Mobile: "Zero-G" floating effect active.
-// 4. Desktop: "Slide & Snap" hover effects 100% restored.
+// 1. Mobile Alignment: Removed 'translate-x' offsets on mobile. All images are now properly centered/placed.
+// 2. Daily Intel: Centered on mobile (was drifting right).
+// 3. Risk Console: Centered on mobile (was drifting).
+// 4. Desktop: "Slide & Snap" and "Peeking" effects preserved 100%.
 // ASSETS: v2.5 Hybrid Product Shots (Linked)
 ---
 
@@ -40,7 +40,7 @@
            <img 
              src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_daily_market_intelligence.png" 
              alt="Daily Market Intelligence Report showing executive brief" 
-             class="w-full h-full object-contain object-bottom drop-shadow-2xl transition-all duration-700 ease-out transform translate-x-4 translate-y-0 md:translate-x-8 md:translate-y-4 group-hover:translate-x-2 md:group-hover:translate-y-2 group-hover:scale-100 md:group-hover:scale-105 rotate-0 md:rotate-y-6 md:rotate-x-3" 
+             class="w-full h-full object-contain object-bottom drop-shadow-2xl transition-all duration-700 ease-out transform translate-x-0 translate-y-0 md:translate-x-8 md:translate-y-4 group-hover:translate-x-2 md:group-hover:translate-y-2 group-hover:scale-100 md:group-hover:scale-105 rotate-0 md:rotate-y-6 md:rotate-x-3" 
              loading="eager" 
            />
         </div>
@@ -98,7 +98,7 @@
              <img 
                src="https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/productshots/product_shot_v2_calculator.png" 
                alt="Risk Management Calculator" 
-               class="w-full h-full object-contain object-top md:object-left drop-shadow-2xl opacity-100 brightness-110 transition-all duration-700 ease-out transform group-hover:scale-100 md:group-hover:scale-105 md:group-hover:translate-x-0 md:group-hover:rotate-y-0 md:group-hover:rotate-x-0 rotate-0 md:rotate-y-12 md:rotate-x-6" 
+               class="w-full h-full object-contain object-top md:object-left drop-shadow-2xl opacity-100 brightness-110 transition-all duration-700 ease-out transform translate-x-0 md:translate-x-0 group-hover:scale-100 md:group-hover:scale-105 md:group-hover:translate-x-0 md:group-hover:rotate-y-0 md:group-hover:rotate-x-0 rotate-0 md:rotate-y-12 md:rotate-x-6" 
                loading="lazy" 
              />
          </div>
@@ -120,7 +120,6 @@
 </section>
 
 <style>
-  /* 3D PERSPECTIVE UTILITIES */
   .perspective-1000 { perspective: 1000px; }
   .rotate-y-6 { transform: rotateY(6deg); }
   .rotate-y-12 { transform: rotateY(12deg); }
@@ -128,10 +127,9 @@
   .rotate-x-3 { transform: rotateX(3deg); }
   .rotate-x-6 { transform: rotateX(6deg); }
 
-  /* MOBILE FLOATING ANIMATION (Zero-G) */
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-8px); }
   }
   .animate-float {
     animation: float 6s ease-in-out infinite;
