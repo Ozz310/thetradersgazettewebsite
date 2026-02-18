@@ -1,5 +1,6 @@
 ---
-// src/layouts/Layout.astro
+// [TG-DESC]: Global Layout Shell. Orchestrates SEO Strategy, Master Entity Graph Injection, and Obsidian Void #050505 theming across the entire website.
+
 import '../styles/global.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer.astro';
@@ -11,44 +12,66 @@ interface Props {
 
 const {
   title,
-  description = "Professional market intelligence & trading terminal. Access daily analysis, advanced charts, risk management tools, and trade journaling for Forex, Crypto, & Stocks. Built for structure, discipline, and intent."
+  description = "Professional market intelligence & trading terminal. Access daily analysis, advanced charts, risk management tools, and trade journaling. Built for structure, discipline, and intent."
 } = Astro.props;
 
-// SEO BIBLE: Organization Schema with Social Nodes
-const orgSchema = JSON.stringify({
+// 🏆 THE SOVEREIGN DNA: MASTER ENTITY GRAPH
+// Source: _00_TG_SEO_AIO_BIBLE [Lines 171-217]
+const masterGraphSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "The Trader's Gazette",
-  "url": "https://www.thetradersgazette.com",
-  "logo": "https://www.thetradersgazette.com/logo_tg.jpeg",
-  "description": "A market intelligence and trading systems platform designed for traders and investors who operate with structure, discipline, and intent.",
-  "foundingDate": "2024",
-  "sameAs": [
-    "https://www.linkedin.com/company/the-traders-gazette",
-    "https://www.facebook.com/share/1M8F5rxTWr/",
-    "https://www.instagram.com/thetradersgazette?igsh=bnQzaWE4YzlmZXVp"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "email": "support@thetradersgazette.com"
-  }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.thetradersgazette.com/#organization",
+      "name": "The Trader's Gazette",
+      "url": "https://www.thetradersgazette.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/WhatsApp%20Image%202025-06-18%20at%2011.37.16.jpeg",
+        "width": 112,
+        "height": 112
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Mohammad Osama",
+        "sameAs": "http://www.linkedin.com/in/mohammad-osama-4247729b"
+      },
+      "sameAs": [
+        "https://www.facebook.com/share/1M8F5rxTWr/",
+        "https://www.instagram.com/thetradersgazette?igsh=bnQzaWE4YzlmZXVp",
+        "http://www.youtube.com/@TheTradersGazette",
+        "http://www.linkedin.com/in/mohammad-osama-4247729b"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://app.thetradersgazette.com",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.thetradersgazette.com/#website",
+      "url": "https://www.thetradersgazette.com",
+      "name": "The Trader's Gazette Terminal",
+      "publisher": { "@id": "https://www.thetradersgazette.com/#organization" }
+    }
+  ]
 });
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="canonical" href="https://www.thetradersgazette.com" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="robots" content="index, follow" />
-    <title>{title} | The Trader's Gazette</title>
+    
+    <title>{title} | Trader's Gazette</title>
+    <meta name="description" content={description} />
 
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-1S5YJF7H6S"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1S5YJF7H6S"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -56,7 +79,9 @@ const orgSchema = JSON.stringify({
       gtag('config', 'G-1S5YJF7H6S');
     </script>
 
-    <script type="application/ld+json" set:html={orgSchema} />
+    <script type="application/ld+json" set:html={masterGraphSchema} />
+
+    <slot name="head" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,11 +105,3 @@ const orgSchema = JSON.stringify({
     </div>
   </body>
 </html>
-
-<style is:global>
-  :root {
-    --gold-50: #fffdf0; --gold-100: #fff9c2; --gold-200: #fff185; --gold-300: #ffe147; --gold-400: #ffcc1a; --gold-500: #e6ac00; --gold-600: #bf8600; --gold-700: #996300; --gold-800: #7a4b00; --gold-900: #663d00;
-  }
-  html { font-family: 'Inter', system-ui, sans-serif; }
-  body { margin: 0; width: 100%; min-height: 100vh; }
-</style>
