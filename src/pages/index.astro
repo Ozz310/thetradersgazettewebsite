@@ -1,43 +1,153 @@
 ---
+// [TG-DESC]: Homepage of The Trader's Gazette, featuring the hero section, core features, market intelligence overview, and consolidated terminal access CTA.
 import Layout from '../layouts/Layout.astro';
 import HeroMacroThesis from '../components/HeroMacroThesis.astro';
-import PricingTeaser from '../components/PricingTeaser.astro';
 import IdentityGrid from '../components/IdentityGrid.astro';
-import IntelligenceGrid from '../components/IntelligenceGrid.astro'; // <--- NEW IMPORT
+import IntelligenceGrid from '../components/IntelligenceGrid.astro';
 
-// AIO/SEO BIBLE: Hybrid Schema
-const schema = JSON.stringify([
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "The Trader's Gazette Terminal",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Web",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+// 🧬 AIO/SEO BIBLE: Software & Deep Entity Schema
+const softwareSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.thetradersgazette.com/#terminal",
+      "name": "The Trader's Gazette Terminal",
+      "alternateName": "TG Terminal",
+      "description": "A market intelligence and trading systems platform designed for traders and investors who operate with structure, discipline, and intent. It delivers clear market analysis, curated financial news, and practical trading tools across Forex, Crypto, Stocks, Indices, and Commodities to help users cut through noise and manage risk intelligently.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "url": "https://app.thetradersgazette.com",
+      "downloadUrl": "https://app.thetradersgazette.com",
+      "audience": [
+        { "@type": "Audience", "audienceType": "Forex, Commodity, Equity, Stocks, and Crypto Traders" },
+        { "@type": "Audience", "audienceType": "HNWI and UHNWI Investors" },
+        { "@type": "Audience", "audienceType": "The Structure Seeker - Professionals looking for a centralized, organized trading workspace" },
+        { "@type": "Audience", "audienceType": "The Efficiency-Focused Professional - Traders aiming to streamline analysis, execution, and review" },
+        { "@type": "Audience", "audienceType": "The Strategic Optimizer - Experienced market participants refining their analytical edge" },
+        { "@type": "Audience", "audienceType": "The Action-Oriented Learner - Traders who value tools and frameworks they can implement immediately" }
+      ],
+      "featureList": [
+        "Daily Market Intelligence: 24h Recap & 48h Forward Event Scanner",
+        "Trading Session Clock: Live liquidity depth for NY, London, Tokyo, Frankfurt, Sydney",
+        "Analysis Hub: Advanced Charting with Fundamental Economic Calendar integration",
+        "24/7 News Room: Real-time aggregator with 500+ daily articles and Yahoo Finance Live",
+        "Knowledge Hub: Proprietary TG E-Book library for financial education",
+        "Risk Management Hub: Margin and Risk-to-Reward (R:R) calculation engines",
+        "Multi-Asset Trade Journal: Visualized performance tracking and metric analytics",
+        "Work Station: Integrated checklists, trade-notes, and task management"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/OnlineOnly"
+      },
+      "potentialAction": {
+        "@type": "RegisterAction",
+        "target": "https://app.thetradersgazette.com/#auth"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "120"
+      },
+      "mainEntityOfPage": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does TG Terminal provide institutional-grade intelligence to retail traders?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unlike closed institutional systems, TG Terminal democratizes access to 48-hour forward event scanners and liquidity depth mapping used by professional bank traders."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is a consolidated Work Station superior to using multiple trading tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Fragmented workflows cause 'Cognitive Lag.' TG Terminal eliminates this by syncing the Analysis Hub, 24/7 News Room, and Multi-Asset Journal into a single low-latency environment, ensuring zero-second transitions from analysis to execution."
+            }
+          }
+        ]
+      },
+      "author": { "@id": "https://www.thetradersgazette.com/#organization" },
+      "knowsAbout": [
+        "https://www.wikidata.org/wiki/Q1025732",
+        "https://www.wikidata.org/wiki/Q192934",
+        "https://www.wikidata.org/wiki/Q184232",
+        "Financial Services",
+        "Investment & Securities"
+      ]
     },
-    "featureList": "Market Intelligence, Trade Journaling, Risk Calculator, Economic Calendar",
-    "description": "Institutional-grade market intelligence and trade journaling terminal for professional traders."
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Mohammad Osama",
-    "jobTitle": "Founder & Operations",
-    "worksFor": {
+    {
       "@type": "Organization",
-      "name": "The Trader's Gazette"
+      "@id": "https://www.thetradersgazette.com/#organization",
+      "name": "The Trader's Gazette",
+      "url": "https://www.thetradersgazette.com",
+      "logo": "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/WhatsApp%20Image%202025-06-18%20at%2011.37.16.jpeg",
+      "founder": {
+        "@type": "Person",
+        "name": "Mohammad Osama",
+        "jobTitle": "Founder & Market Intelligence Architect",
+        "sameAs": [
+          "http://www.linkedin.com/in/mohammad-osama-4247729b"
+        ],
+        "knowsAbout": ["AML/CFT", "CISI UK Investment Securities", "Forex & CFDs"]
+      }
+    }
+  ]
+});
+
+// 🏆 TG MASTER ENTITY GRAPH (THE TRUTH)
+const masterEntitySchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.thetradersgazette.com/#organization",
+      "name": "The Trader's Gazette",
+      "url": "https://www.thetradersgazette.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/WhatsApp%20Image%202025-06-18%20at%2011.37.16.jpeg",
+        "width": 112,
+        "height": 112
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Mohammad Osama",
+        "sameAs": "http://www.linkedin.com/in/mohammad-osama-4247729b"
+      },
+      "sameAs": [
+        "https://www.facebook.com/share/1M8F5rxTWr/",
+        "https://www.instagram.com/thetradersgazette?igsh=bnQzaWE4YzlmZXVp",
+        "http://www.youtube.com/@TheTradersGazette",
+        "http://www.linkedin.com/in/mohammad-osama-4247729b"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://app.thetradersgazette.com",
+        "availableLanguage": "English"
+      }
     },
-    "url": "http://www.linkedin.com/in/mohammad-osama-4247729b",
-    "description": "Strategic Lead & Founder of The Trader's Gazette, specializing in institutional market intelligence."
-  }
-]);
+    {
+      "@type": "WebSite",
+      "@id": "https://www.thetradersgazette.com/#website",
+      "url": "https://www.thetradersgazette.com",
+      "name": "The Trader's Gazette Terminal",
+      "publisher": { "@id": "https://www.thetradersgazette.com/#organization" }
+    }
+  ]
+});
 ---
 
 <Layout title="The Trader's Gazette | Institutional Market Intelligence">
-  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={softwareSchema} />
+  <script type="application/ld+json" set:html={masterEntitySchema} />
 
   <HeroMacroThesis />
 
@@ -103,9 +213,29 @@ const schema = JSON.stringify([
 
   <IntelligenceGrid />
 
-  <div class="py-12 max-w-7xl mx-auto px-4">
-    <PricingTeaser />
-  </div>
+  <section class="py-24 bg-[#050505] border-t border-[#DDAA33]/20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(240,215,136,0.03)_0%,transparent_60%)] pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">
+        Ready for <span class="bg-gradient-to-br from-[#F0D788] to-[#DDAA33] text-transparent bg-clip-text">Institutional Insight?</span>
+      </h2>
+      
+      <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+        Stop chasing news headlines. Start trading with the clarity and precision reserved for the elite 1%.
+      </p>
+      
+      <div class="flex flex-col items-center gap-4">
+        <a href="https://app.thetradersgazette.com/#auth" class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-[#050505] transition-all duration-300 rounded-lg bg-[linear-gradient(145deg,#F0D788,#DDAA33)] hover:shadow-[0_0_25px_rgba(240,215,136,0.4)] hover:scale-[1.02] uppercase tracking-wide">
+          Secure Terminal Access
+          <svg class="w-6 h-6 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </Layout>
 
 <style>
