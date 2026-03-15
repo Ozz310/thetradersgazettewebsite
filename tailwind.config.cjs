@@ -1,4 +1,3 @@
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -18,27 +17,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
-"dependencies": {
-    "@astrojs/react": "^3.0.7",
-    "@astrojs/tailwind": "^5.0.3",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
-    "astro": "^4.0.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.6"
-  }
-=======
-  "dependencies": {
-    "@astrojs/react": "^3.0.7",
-    "@astrojs/tailwind": "^5.0.3",
-    "@tailwindcss/typography": "^0.5.10",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
-    "astro": "^4.0.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.6"
-  }
