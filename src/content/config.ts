@@ -1,3 +1,4 @@
+
 // [TG-DESC]: Setup Astro Content Collections for Blog
 import { z, defineCollection } from 'astro:content';
 
