@@ -1,17 +1,25 @@
-
 ---
-// src/pages/blog.astro
+// [TG-DESC]: The Gazette Blog Index - Fetches Dynamic Markdown Collections
 import Layout from '../layouts/Layout.astro';
 import BlogCard from '../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
 
 const pageTitle = "The Trader's Gazette Blog: Deep Macro & Trading Analysis";
 const pageDescription = "Exclusive long-form articles, educational guides, and advanced macro primers to elevate your trading strategy and generate organic traffic.";
 
-// Placeholder data for blog posts (will be replaced by Headless CMS integration later)
-const posts = [
-    { slug: 'understanding-yield-curve-inversions', title: 'Understanding Yield Curve Inversions: The Ultimate Recession Signal', date: 'Oct 15, 2025', summary: 'A deep-dive into the mechanics of the yield curve and its predictive power for macro trends.' },
-    { slug: 'optimal-position-sizing', title: 'Optimal Position Sizing: Risk Management for the Strategic Trader', date: 'Oct 8, 2025', summary: 'Advanced techniques to protect capital and maximize returns using volatile assets.' },
-];
+// Dynamically fetch all markdown posts from src/content/blog/
+const allPosts = await getCollection('blog');
+
+// Sort posts by date (newest first)
+const sortedPosts = allPosts.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+
+// Map to the format expected by BlogCard
+const posts = sortedPosts.map(post => ({
+    slug: post.slug,
+    title: post.data.title,
+    date: post.data.date,
+    summary: post.data.summary
+}));
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
