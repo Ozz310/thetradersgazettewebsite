@@ -1,5 +1,5 @@
 ---
-// [TG-DESC]: Dynamic Blog Post Route & SEO Schema Injection
+// [TG-DESC]: Dynamic Blog Post Route & TG SEO Master Entity Injection
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
@@ -13,25 +13,58 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-// The SEO Spine: Knowledge Graph Injection
+// The SEO Spine: Master Entity Graph + Software Application + Article Schema
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": entry.data.title,
-  "datePublished": new Date(entry.data.date).toISOString(),
-  "author": {
-    "@type": "Organization",
-    "name": entry.data.author
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "TG Terminal",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://thetradersgazette.com/logo_tg.jpeg"
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `https://www.thetradersgazette.com/blog/${entry.slug}#article`,
+      "headline": entry.data.title,
+      "datePublished": new Date(entry.data.date).toISOString(),
+      "description": entry.data.summary,
+      "author": { "@id": "https://www.thetradersgazette.com/#organization" },
+      "publisher": { "@id": "https://www.thetradersgazette.com/#organization" },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://www.thetradersgazette.com/blog/${entry.slug}`
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.thetradersgazette.com/#terminal",
+      "name": "The Trader's Gazette Terminal",
+      "alternateName": "TG Terminal",
+      "description": "A market intelligence and trading systems platform designed for traders and investors who operate with structure, discipline, and intent...",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "url": "https://app.thetradersgazette.com",
+      "author": { "@id": "https://www.thetradersgazette.com/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.thetradersgazette.com/#organization",
+      "name": "The Trader's Gazette",
+      "url": "https://www.thetradersgazette.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://raw.githubusercontent.com/Ozz310/tradersgazetteterminal/refs/heads/main/images/WhatsApp%20Image%202025-06-18%20at%2011.37.16.jpeg",
+        "width": 112,
+        "height": 112
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Mohammad Osama",
+        "sameAs": "http://www.linkedin.com/in/mohammad-osama-4247729b"
+      },
+      "sameAs": [
+        "https://www.facebook.com/share/1M8F5rxTWr/",
+        "https://www.instagram.com/thetradersgazette?igsh=bnQzaWE4YzlmZXVp",
+        "http://www.youtube.com/@TheTradersGazette",
+        "http://www.linkedin.com/in/mohammad-osama-4247729b"
+      ]
     }
-  },
-  "description": entry.data.summary
+  ]
 };
 ---
 
@@ -45,7 +78,7 @@ const schema = {
             <p class="text-xl text-gray-400 italic font-serif">{entry.data.summary}</p>
         </header>
 
-        <div class="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-[#DDAA33] hover:prose-a:text-yellow-400 prose-img:rounded-xl prose-img:shadow-2xl mx-auto">
+        <div class="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-[#DDAA33] hover:prose-a:text-yellow-400 prose-img:rounded-xl prose-img:border prose-img:border-gray-800 mx-auto">
             <Content />
         </div>
         
